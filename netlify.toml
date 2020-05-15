@@ -4,12 +4,6 @@
   command = "yarn run build"
   functions = "src/functions/"
 
-[dev]
-  framework = "create-react-app"
-  port = 8888
-  publish = "build"
-  autoLaunch = true
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
