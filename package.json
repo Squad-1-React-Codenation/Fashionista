@@ -15,8 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --check 'src/**/*.(tsx|ts|scss)'",
-    "prettier:fix": "prettier --write 'src/**/*.(tsx|ts|scss)'"
+    "eslint": "eslint 'src/**/*.ts'; eslint 'src/**/*.tsx'",
+    "stylelint": "stylelint 'src/**/*.(scss)'",
+    "prettier": "prettier --check 'src/**/*.(ts|tsx|scss)'"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -27,10 +28,17 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
-    "typescript": "~3.7.2"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "typescript": "^3.9.2"
   },
   "browserslist": {
     "production": [
