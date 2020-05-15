@@ -3,6 +3,7 @@
   publish = "build/"
   command = "yarn run build"
   functions = "src/functions/"
+  ignore = "git diff --quiet HEAD^ HEAD src/"
 
 [[redirects]]
   from = "/*"
