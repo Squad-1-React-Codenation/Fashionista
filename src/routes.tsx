@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import Product from './pages/Product';
+import Home from "./pages/Home";
+import Product from "./pages/Product";
 
 const Routes = () => {
   return (
@@ -12,7 +12,7 @@ const Routes = () => {
         <Route exact path="/produto/:id" component={Product} />
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
