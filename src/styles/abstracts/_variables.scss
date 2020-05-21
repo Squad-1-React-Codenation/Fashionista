@@ -1,24 +1,28 @@
 :root {
-    --heading-1: bold 1.25em;
-    --heading-2: bold 1.0em;
-    --heading-3: bold 0.875em;
-    --heading-4: bold 0.8em;
-    --body-1: 1em;
-    --body-2: 0.875em;
-    --caption: 0.8em;
-    --button: 1em;
+  --heading-1: bold 1.25em;
+  --heading-2: bold 1em;
+  --heading-3: bold 0.875em;
+  --heading-4: bold 0.8em;
+  --body-1: 1em;
+  --body-2: 0.875em;
+  --caption: 0.8em;
+  --button: 1em;
 
-    --color-1: #222222;
-    --color-2: #484848;
-    --color-3: #6E6E6E;
-    --color-4: #BDBDBD;
-    --color-5: #E0E0E0;
-    --color-6: #F2F2F2;
-    --color-7: #CF3838;
+  --gray-1: #222222;
+  --gray-2: #484848;
+  --gray-3: #6e6e6e;
+  --gray-4: #bdbdbd;
+  --gray-5: #e0e0e0;
+  --gray-6: #f2f2f2;
 
-    --padding-1: 12px;
-    --padding-2: 10px;
-    --padding-3: 8px;
-    --padding-4: 6px;
-    --padding-4: 4px;
+  --red: #cf3838;
+  --white: #fff;
+
+  --border-radius: 5px;
+
+  --padding-1: 12px;
+  --padding-2: 10px;
+  --padding-3: 8px;
+  --padding-4: 6px;
+  --padding-4: 4px;
 }
