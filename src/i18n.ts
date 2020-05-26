@@ -42,11 +42,7 @@ i18n
   .init({
     resources,
     lng: "pt-BR",
-    // lng: "es",
-    // lng: "en",
-
     keySeparator: false,
-
     interpolation: {
       escapeValue: false
     } 

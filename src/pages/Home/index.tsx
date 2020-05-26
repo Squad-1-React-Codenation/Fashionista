@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, OutlineButton } from "../../components/base/buttons";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div>
@@ -17,6 +17,15 @@ const Home = () => {
         <meta name="keywords" content={t('keywords')}/>
       </Helmet>
       <h1>Home</h1>
+      <button onClick={() => i18n.changeLanguage('pt-BR')}>
+        Português
+      </button>
+      <button onClick={() => i18n.changeLanguage('en')}>
+        English
+      </button>
+      <button onClick={() => i18n.changeLanguage('es')}>
+        Español
+      </button>
       <Button>{t('addToBag')}</Button>
       <OutlineButton>{t('removeFromBag')}</OutlineButton>
     </div>
