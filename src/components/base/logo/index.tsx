@@ -1,5 +1,10 @@
 import React from "react";
 
-export const Logo = () => {
-  return <div>undefined</div>;
+type PropType = {
+  height:number, 
+  width:number,
+};
+
+export const Logo = ({ height, width }: PropType) => {
+  return <img src="/logoundefined.png" height={height} width={width}/>;
 };
