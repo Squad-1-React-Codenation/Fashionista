@@ -5,6 +5,7 @@ env:
 extends:
   - "eslint:recommended"
   - "plugin:@typescript-eslint/eslint-recommended"
+  - "plugin:@typescript-eslint/recommended"
   - "plugin:react/recommended"
   - "plugin:react-hooks/recommended"
   - "prettier"
@@ -29,3 +30,8 @@ rules:
     - error
     - allow:
         - error
+        - warn
+overrides:
+  - files: "*.tsx"
+    rules:
+      "@typescript-eslint/explicit-function-return-type": 0
