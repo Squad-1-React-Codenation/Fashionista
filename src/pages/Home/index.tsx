@@ -4,6 +4,8 @@ import { Button, OutlineButton } from "../../components/base/buttons";
 import { productAPI } from "../../services/productAPI";
 import { ProductType } from "../../services/types";
 
+import { Card } from "../../components/modules/card";
+
 const Home = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
 
@@ -17,11 +19,11 @@ const Home = () => {
       <Button>Adicionar à Sacola</Button>
       <OutlineButton>Remover da Sacola</OutlineButton>
       Produtos
-      <ul>
-        {products.map((product) => (
-          <li key={product.name}>{product.name}</li>
+      <div className="product-list">
+        {products.map((product: ProductType) => (
+          <Card key={product.name} {...product}></Card>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
