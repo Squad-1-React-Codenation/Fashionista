@@ -3,24 +3,68 @@ import {
   ProductActionsTypes,
   AsyncProductThunkAction,
 } from "./types";
-import { ProductType } from "../../services/types";
+import { ProductType } from "../../services/products/types";
 
-export const fetchBegin = (): ProductActionsTypes => ({
-  type: ProductAction.FETCH_BEGIN,
+export const fetchListingBegun = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_LISTING_BEGUN,
 });
 
-export const setProducts = (products: ProductType[]): ProductActionsTypes => ({
-  type: ProductAction.SET_PRODUCTS,
+export const fetchListingFailed = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_LISTING_FAILED,
+});
+
+export const fetchListingSucceed = (
+  products: ProductType[]
+): ProductActionsTypes => ({
+  type: ProductAction.FETCH_LISTING_SUCCEEDED,
   products,
 });
 
-export const getProducts = (): AsyncProductThunkAction => async (
+export const getListing = (): AsyncProductThunkAction => async (
   dispatch,
   _,
-  { productAPI }
+  { productsAPI }
 ): Promise<void> => {
-  dispatch(fetchBegin());
+  dispatch(fetchListingBegun());
 
-  const products = await productAPI("");
-  dispatch(setProducts(products));
+  try {
+    const products = await productsAPI.getCatalog();
+    dispatch(fetchListingSucceed(products));
+  } catch (error) {
+    dispatch(fetchListingFailed());
+  }
+};
+
+export const fetchProductBegun = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_LISTING_BEGUN,
+});
+
+export const fetchProductFailed = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_LISTING_FAILED,
+});
+
+export const fetchProductSucceeced = (
+  product: ProductType,
+  additionalColors: ProductType[]
+): ProductActionsTypes => ({
+  type: ProductAction.FETCH_PRODUCT_SUCCEEDED,
+  product,
+  additionalColors,
+});
+
+export const getProduct = (id: string): AsyncProductThunkAction => async (
+  dispatch,
+  _,
+  { productsAPI }
+): Promise<void> => {
+  dispatch(fetchProductBegun());
+  try {
+    const { product, additionalColors } = await productsAPI.getProduct(id);
+    if (!product) {
+      throw new Error("NOT FOUND");
+    }
+    fetchProductSucceeced(product, additionalColors || []);
+  } catch {
+    dispatch(fetchProductFailed());
+  }
 };

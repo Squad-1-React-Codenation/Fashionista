@@ -3,25 +3,25 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ProductType } from "../../services/types";
+import { ProductType } from "../../services/products/types";
 import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
-import { getProducts } from "../../store/products/actions";
+import { getListing } from "../../store/products/actions";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { loading, listing } = useSelector(
-    (state: StoreState) => state.products
+  const { loading, products } = useSelector(
+    (state: StoreState) => state.products.listing
   );
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getListing());
   }, [dispatch]);
 
-  if (loading || !listing.length) {
+  if (loading || !products.length) {
     return <div>Loading...</div>;
   }
 
@@ -34,9 +34,12 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+      Produtos - {products.length} items encontrados
       <div className="card__list">
-        {listing.map((product: ProductType) => (
-          <Card key={product.code_color} {...product}></Card>
+        {products.map((product: ProductType) => (
+          <>
+            <Card key={product.codeColor} {...product}></Card>
+          </>
         ))}
       </div>
     </>
