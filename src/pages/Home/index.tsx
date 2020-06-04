@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Button,
@@ -19,7 +19,16 @@ import {
   MinusIcon,
 } from "../../components/base/icons";
 
+import { productAPI } from "../../services/productAPI";
+import { ProductType } from "../../services/types";
+
 const Home = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
+
+  useEffect(() => {
+    productAPI().then((products) => setProducts(products));
+  }, []);
+
   return (
     <div>
       <h1>Home</h1>
@@ -57,6 +66,12 @@ const Home = () => {
       <OutlineButton>Remover da Sacola</OutlineButton>
       <br />
       <br />
+      Produtos
+      <ul>
+        {products.map((product) => (
+          <li key={product.name}>{product.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };
