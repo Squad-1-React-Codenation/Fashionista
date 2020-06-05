@@ -53,12 +53,8 @@
 }
 
 .button--qtdinfo {
-  left: 15.48%;
-  right: 9.52%;
-  top: 16.67%;
-  bottom: 16.67%;
   padding: 0px;
-  font-family: Noto Sans;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 12px;
@@ -70,23 +66,14 @@
 .button--discount {
   width: 49px;
   height: 18px;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
 
   /* Gray 1 */
   background: var(--gray-1);
 }
 
 .button--discountinfo {
-  left: 16.33%;
-  right: 16.33%;
-  top: -11.11%;
-  bottom: 11.11%;
-
   /* Body 1 */
-  font-family: Noto Sans;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -100,23 +87,14 @@
 .button--discount-large {
   width: 58px;
   height: 22px;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
 
   /* Gray 1 */
   background: var(--gray-1);
 }
 
 .button--discountinfo-large {
-  left: 16.33%;
-  right: 16.33%;
-  top: -11.11%;
-  bottom: 11.11%;
-
   /* Body 1 */
-  font-family: Noto Sans;
+  font-family: "Noto Sans", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
