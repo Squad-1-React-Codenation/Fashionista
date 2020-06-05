@@ -3,6 +3,10 @@
   border: none;
   background-color: var(--white);
   font: var(--button);
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .button--large {
