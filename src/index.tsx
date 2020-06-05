@@ -12,7 +12,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      <Routes />
+      <div className="container">
+        <Routes />
+      </div>
       <Footer />
     </BrowserRouter>
   </React.StrictMode>,
