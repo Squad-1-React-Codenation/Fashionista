@@ -2,7 +2,10 @@
 @import "abstracts/reset";
 @import "abstracts/typography";
 
+@import "base/container";
+
 @import "components/button";
+@import "components/header";
 
 @import "pages/home";
 @import "pages/product";
