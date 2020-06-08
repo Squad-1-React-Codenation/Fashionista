@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { productAPI } from "../../services/productAPI";
+import { ProductType } from "../../services/types";
 
-import { Button, OutlineButton } from "../../components/base/buttons";
+import { Card } from "../../components/modules/card";
 
 const Home = () => {
-  const { t, i18n } = useTranslation();
+  const [products, setProducts] = useState<ProductType[]>([]);
 
-  const translation = (language: string) => {
-    i18n.changeLanguage(language)
-  }
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    productAPI().then((products) => setProducts(products));
+  }, []);
 
   return (
     <div>
@@ -20,14 +24,12 @@ const Home = () => {
         <meta name="author" content={t('author')}/>
         <meta name="keywords" content={t('keywords')}/>
       </Helmet>
-      <h1>Home</h1>
-
-      <button onClick={() => translation('pt-BR')}>Português</button>
-      <button onClick={() => translation('en')}>English</button>
-      <button onClick={() => translation('es')}>Español</button>
-
-      <Button>{t('addToBag')}</Button>
-      <OutlineButton>{t('removeFromBag')}</OutlineButton>
+      Produtos - 22 itens
+      <div className="product-list">
+        {products.map((product: ProductType) => (
+          <Card key={product.name} {...product}></Card>
+        ))}
+      </div>
     </div>
   );
 };

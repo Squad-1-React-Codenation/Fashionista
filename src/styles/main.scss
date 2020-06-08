@@ -1,8 +1,13 @@
-@import 'abstracts/variables';
-@import 'abstracts/reset';
-@import 'abstracts/typography';
+@import "abstracts/variables";
+@import "abstracts/reset";
+@import "abstracts/typography";
 
-@import 'components/button';
+@import "base/container";
 
-@import 'pages/home';
-@import 'pages/product';
+@import "components/button";
+@import "components/card";
+@import "components/header";
+@import "components/footer";
+
+@import "pages/home";
+@import "pages/product";
