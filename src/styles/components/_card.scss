@@ -1,17 +1,18 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .product-card {
   text-align: center;
-  width: 24%;
-  padding: 1rem 0.1rem;
+  width: calc(25% - 16px);
+  margin: 16px 0;
 }
 
 @media screen and (max-width: 800px) {
   .product-card {
-    width: 50%;
+    width: calc(50% - 48px);
   }
 }
 
@@ -21,15 +22,13 @@
 
 .product-name {
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
   font-size: 0.8rem;
   font-weight: 600;
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
 }
 
 .product-regular-price {

@@ -4,7 +4,7 @@ import { ProductType } from "../../../services/types";
 export const Card = (product: ProductType) => {
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.name}></img>
+      <img src={product.image} alt=""></img>
       <div className="product-name"> {product.name} </div>
       {product.on_sale ? (
         <div className="product-price">

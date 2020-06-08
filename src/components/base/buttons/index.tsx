@@ -11,7 +11,7 @@ type ButtonPropsType =
 
 export const Button = (props: ButtonPropsType) => {
   return (
-    <button disabled={props.disabled} className={`button ${props.modifier}`}>
+    <button {...props} className={`button ${props.modifier}`}>
       {props.children}
     </button>
   );
