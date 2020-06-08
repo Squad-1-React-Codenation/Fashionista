@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "./buttons"
-
+import { Button } from "./buttons";
 
 const index = () => {
   return <Button></Button>;
