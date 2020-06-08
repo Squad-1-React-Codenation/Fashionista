@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import { Button, OutlineButton } from "../../components/base/buttons";
 import { productAPI } from "../../services/productAPI";
 import { ProductType } from "../../services/types";
 
@@ -15,10 +13,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-      <Button>Adicionar à Sacola</Button>
-      <OutlineButton>Remover da Sacola</OutlineButton>
-      Produtos
+      Produtos - 22 itens
       <div className="product-list">
         {products.map((product: ProductType) => (
           <Card key={product.name} {...product}></Card>

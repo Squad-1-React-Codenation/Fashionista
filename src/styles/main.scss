@@ -2,8 +2,12 @@
 @import "abstracts/reset";
 @import "abstracts/typography";
 
+@import "base/container";
+
 @import "components/button";
 @import "components/card";
+@import "components/header";
+@import "components/footer";
 
 @import "pages/home";
 @import "pages/product";
