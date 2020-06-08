@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
-        <Logo />
+        <Logo height={40} width={120} />
         <div className="header__icons">
           <Button onClick={buttonHandler}>
             <SearchIcon />
