@@ -1,7 +1,9 @@
 import React from "react";
+import { Button } from "./buttons"
+
 
 const index = () => {
-  return <div></div>;
+  return <Button></Button>;
 };
 
 export default index;
