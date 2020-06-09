@@ -14,13 +14,17 @@ const resources = {
   },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "pt-BR",
-  keySeparator: false,
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n.use(initReactI18next);
+
+export const initLang = (lang: string): void => {
+  i18n.init({
+    resources,
+    lng: lang,
+    keySeparator: false,
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+};
 
 export default i18n;
