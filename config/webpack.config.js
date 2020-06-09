@@ -508,7 +508,6 @@ module.exports = function (webpackEnv) {
     plugins: [
       // Generates an `index.html` file with the <script> injected.
       ...paths.appHtml.map((app) => {
-        console.log("filePath", app.slice(app.indexOf("index")));
         return new HtmlWebpackPlugin(
           Object.assign(
             {},
