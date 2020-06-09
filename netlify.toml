@@ -8,16 +8,19 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  force = true
   status = 200
   conditions = {Language = ["pt"]}
 [[redirects]]
   from = "/*"
   to = "/index-es.html"
+  force = true
   status = 200
-  conditions = {Language = ["en"]}
+  conditions = {Language = ["es"]}
 [[redirects]]
   from = "/*"
   to = "/index-en.html"
+  force = true
   status = 200
 
 [[headers]]
