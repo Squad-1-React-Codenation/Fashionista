@@ -26,8 +26,8 @@ const Home = () => {
       </Helmet>
       Produtos - 22 itens
       <div className="product-list">
-        {products.map((product: ProductType) => (
-          <Card key={product.name} {...product}></Card>
+        {products.map((product: ProductType, index) => (
+          <Card key={index} {...product}></Card>
         ))}
       </div>
     </div>
