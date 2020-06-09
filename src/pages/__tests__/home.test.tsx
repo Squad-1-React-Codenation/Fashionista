@@ -9,7 +9,6 @@ jest.mock("../../services/productAPI");
 describe("HomePage", () => {
   it("Should render and show Home", async () => {
     render(<Home />);
-
     expect(screen.getByText("Home")).toBeTruthy();
   });
 
