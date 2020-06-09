@@ -14,12 +14,11 @@ const resources = {
   },
 };
 
-i18n.use(initReactI18next);
-
-export const initLang = (lang: string): void => {
-  i18n.init({
+export const initLang = (): void => {
+  i18n.use(initReactI18next).init({
     resources,
-    lng: lang,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    lng: (window as any).__Locale,
     keySeparator: false,
     interpolation: {
       escapeValue: false,

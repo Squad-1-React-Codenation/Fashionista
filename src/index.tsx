@@ -10,7 +10,7 @@ import Header from "./components/modules/header";
 import "./styles/main.scss";
 
 const App = () => {
-  initLang(document.head.lang);
+  initLang();
 
   return (
     <React.StrictMode>
