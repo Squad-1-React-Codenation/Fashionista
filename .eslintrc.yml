@@ -2,6 +2,7 @@ env:
   browser: true
   jest: true
   es6: true
+  node: true
 extends:
   - "eslint:recommended"
   - "plugin:@typescript-eslint/eslint-recommended"
@@ -20,7 +21,8 @@ parserOptions:
   sourceType: module
 settings:
   "react":
-    - version: 16.13
+    pragma: React
+    version: "16.13"
 plugins:
   - "react"
   - "react-hooks"

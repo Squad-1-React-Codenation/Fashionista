@@ -10,7 +10,7 @@ export const Instagram = ({ height, width }: SocialIconsType) => {
     <a
       href="https://www.instagram.com/app_undefined/?hl=pt-br"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <img src="/insta.png" height={height} width={width} />
     </a>
