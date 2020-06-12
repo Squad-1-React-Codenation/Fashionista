@@ -19,8 +19,8 @@ parserOptions:
   ecmaVersion: 11
   sourceType: module
 settings:
-  "react":
-    - version: 16.13
+  react:
+    version: "16.13"
 plugins:
   - "react"
   - "react-hooks"

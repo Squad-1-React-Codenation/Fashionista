@@ -1,6 +1,7 @@
 import React from "react";
 
 type ButtonPropsType =
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   | any
   | {
       children?: React.ReactChild | React.ReactChild[];
