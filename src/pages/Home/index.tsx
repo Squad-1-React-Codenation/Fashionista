@@ -6,6 +6,7 @@ import { ProductType } from "../../services/types";
 
 import { Card } from "../../components/modules/card";
 import { SearchInput } from "../../components/modules/searchInput";
+import { ModalCard } from "../../components/modules/modalCard";
 
 const Home = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -26,6 +27,7 @@ const Home = () => {
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
       <SearchInput onSearchChange={() => {}} />
+      {products.length && <ModalCard product={products[0]} onProductClick={() => {}}></ModalCard>}
       Produtos - {products.length} items encontrados
       <div className="card__list">
         {products.map((product: ProductType) => (
