@@ -5,5 +5,7 @@
   "author": "Equipe undefined",
   "keywords": "loja de roupas,estilo único,moda atual",
   "addToBag": "Adicionar à sacola",
-  "removeFromBag": "Remover da sacola"
+  "removeFromBag": "Remover da sacola",
+  "searchTitle": "Buscar produtos",
+  "bagTitle": "Sacola ({{count}})"
 }

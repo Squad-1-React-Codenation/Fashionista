@@ -5,5 +5,7 @@
   "author": "undefined team",
   "keywords": "clothing store,unique style,current fashion",
   "addToBag": "Add to bag",
-  "removeFromBag": "Remove from bag"
+  "removeFromBag": "Remove from bag",
+  "searchTitle": "Search products",
+  "bagTitle": "Bag ({{count}})"
 }
