@@ -8,6 +8,7 @@
   "removeFromBag": "Sacar de la bolsa",
   "searchTitle": "Buscar productos",
   "bagTitle": "Bolsa ({{count}})",
+<<<<<<< HEAD
   "searchProduct": "Buscar productos...",
   "notFoundPage": "La página que está buscando ha sido renombrada, eliminada o quizás nunca existió.",
   "notFoundButtonMessage": "Regresar a la página principal",
@@ -24,4 +25,7 @@
   "orders":"Pedidos",
   "loyalty":"Programa Afiliados",
   "rights":" ©2009-2020 Todos los derechos reservados"
+=======
+  "searchProduct": "Buscar productos..."
+>>>>>>> creating search input modal
 }

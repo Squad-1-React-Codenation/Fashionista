@@ -7,7 +7,11 @@ import { ProductType } from "../../services/products/types";
 import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
+<<<<<<< HEAD
 import { getListing } from "../../store/products/actions";
+=======
+import { SearchInput } from "../../components/modules/searchInput";
+>>>>>>> creating search input modal
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -34,6 +38,7 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+      <SearchInput onSearchChange={() => {}} />
       Produtos - {products.length} items encontrados
       <div className="card__list">
         {products.map((product: ProductType) => (
