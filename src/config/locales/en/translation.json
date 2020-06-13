@@ -7,5 +7,6 @@
   "addToBag": "Add to bag",
   "removeFromBag": "Remove from bag",
   "searchTitle": "Search products",
-  "bagTitle": "Bag ({{count}})"
+  "bagTitle": "Bag ({{count}})",
+  "searchProduct": "Search for products..."
 }

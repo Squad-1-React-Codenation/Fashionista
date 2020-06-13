@@ -7,5 +7,6 @@
   "addToBag": "Agregar a la bolsa",
   "removeFromBag": "Sacar de la bolsa",
   "searchTitle": "Buscar productos",
-  "bagTitle": "Bolsa ({{count}})"
+  "bagTitle": "Bolsa ({{count}})",
+  "searchProduct": "Buscar productos..."
 }

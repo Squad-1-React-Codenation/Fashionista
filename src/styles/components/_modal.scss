@@ -13,3 +13,26 @@
   font-weight: bold;
   color: var(--gray-1);
 }
+
+.modal__search {
+  background-color: #f6f6f6;
+  height: 56px;
+  width: 100%;
+  box-shadow: 0 0.2rem 2rem 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__search-input {
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  color: #212529;
+  padding: var(--padding-2);
+  margin: var(--margin-2);
+  font-size: var(--body-2);
+  font-weight: 600;
+  height: auto;
+  width: 100%;
+}

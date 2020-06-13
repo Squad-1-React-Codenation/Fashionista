@@ -5,6 +5,7 @@ import { productAPI } from "../../services/productAPI";
 import { ProductType } from "../../services/types";
 
 import { Card } from "../../components/modules/card";
+import { SearchInput } from "../../components/modules/searchInput";
 
 const Home = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -24,6 +25,7 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+      <SearchInput onSearchChange={() => {}} />
       Produtos - {products.length} items encontrados
       <div className="card__list">
         {products.map((product: ProductType) => (
