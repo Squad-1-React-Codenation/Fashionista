@@ -7,5 +7,6 @@
   "addToBag": "Adicionar à sacola",
   "removeFromBag": "Remover da sacola",
   "searchTitle": "Buscar produtos",
-  "bagTitle": "Sacola ({{count}})"
+  "bagTitle": "Sacola ({{count}})",
+  "searchProduct": "Buscar por produto..."
 }

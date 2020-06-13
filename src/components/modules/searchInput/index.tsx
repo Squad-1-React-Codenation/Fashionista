@@ -1,0 +1,21 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+
+type SearchPropsType = {
+  onSearchChange: () => void;
+};
+
+export const SearchInput = (props: SearchPropsType) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="modal__search">
+      <input
+        onChange={props.onSearchChange}
+        className="modal__search-input"
+        type="text"
+        placeholder={t("searchProduct")}
+      ></input>
+    </div>
+  );
+};
