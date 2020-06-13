@@ -17,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "yarn test --coverage --watchAll",
+    "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
     "lint": "yarn eslint && yarn stylelint && yarn prettier && yarn tsc",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
