@@ -5,5 +5,7 @@
   "author": "Equipo undefined",
   "keywords": "tienda de ropa,estilo único,moda actual",
   "addToBag": "Agregar a la bolsa",
-  "removeFromBag": "Sacar de la bolsa"
+  "removeFromBag": "Sacar de la bolsa",
+  "searchTitle": "Buscar productos",
+  "bagTitle": "Bolsa ({{count}})"
 }
