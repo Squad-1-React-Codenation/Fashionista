@@ -24,8 +24,8 @@ const Home = () => {
         <meta name="author" content={t('author')}/>
         <meta name="keywords" content={t('keywords')}/>
       </Helmet>
-      Produtos - 22 itens
-      <div className="product-list">
+      Produtos - {products.length} items encontrados
+      <div className="card__list">
         {products.map((product: ProductType) => (
           <Card key={product.name} {...product}></Card>
         ))}
