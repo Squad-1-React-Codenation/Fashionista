@@ -17,10 +17,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "yarn test --coverage --watchAll",
+    "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
+    "lint": "yarn eslint && yarn stylelint && yarn prettier && yarn tsc",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
     "stylelint": "stylelint \"src/**/*.(scss)\"",
-    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\""
+    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\" --write"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
