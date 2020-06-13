@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { productAPI } from "../../services/productAPI";
 import { ProductType } from "../../services/types";
 
@@ -18,11 +18,11 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <html lang={t('lang')}/>
-        <title>{t('title')}</title>
-        <meta name="description" content={t('description')}/>
-        <meta name="author" content={t('author')}/>
-        <meta name="keywords" content={t('keywords')}/>
+        <html lang={t("lang")} />
+        <title>{t("title")}</title>
+        <meta name="description" content={t("description")} />
+        <meta name="author" content={t("author")} />
+        <meta name="keywords" content={t("keywords")} />
       </Helmet>
       Produtos - {products.length} items encontrados
       <div className="card__list">
