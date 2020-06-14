@@ -36,3 +36,45 @@
   height: auto;
   width: 100%;
 }
+
+.modal__card {
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-5);
+  cursor: pointer;
+}
+
+.modal__card-product {
+  display: flex;
+  padding: var(--padding-2) 0;
+}
+
+.modal__card-product img {
+  width: 25%;
+}
+
+.modal__product-name {
+  padding: 0 var(--padding-2);
+  font-size: var(--heading-3);
+  font-weight: bold;
+}
+
+.modal__card-payment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-2) 0;
+}
+
+.modal__card-price {
+  font-size: var(--heading-2);
+  font-weight: bold;
+  margin-bottom: var(--margin-2);
+}
+
+.modal__card-installments {
+  font-size: var(--caption);
+  color: var(--gray-4);
+}
