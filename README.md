@@ -6,6 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn lint`
+
+This command executes the following commands, is recommended to run this commit before each commit.
+
+- `yarn eslint`
+- `yarn prettier`
+- `yarn stylelint`
+- `yarn tsc`
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
