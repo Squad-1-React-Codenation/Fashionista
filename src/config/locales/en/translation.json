@@ -8,7 +8,6 @@
   "removeFromBag": "Remove from bag",
   "searchTitle": "Search products",
   "bagTitle": "Bag ({{count}})",
-<<<<<<< HEAD
   "searchProduct": "Search for products...",
   "notFoundPage": "The page you are looking for has been renamed, removed or perhaps never existed.",
   "notFoundButtonMessage": "Return to Home Page",
@@ -25,7 +24,4 @@
   "orders":"Orders",
   "loyalty":"Loyalty Program",
   "rights":" ©2009-2020 All rights Reserved"
-=======
-  "searchProduct": "Search for products..."
->>>>>>> creating search input modal
 }
