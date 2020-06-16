@@ -8,5 +8,7 @@
   "removeFromBag": "Remove from bag",
   "searchTitle": "Search products",
   "bagTitle": "Bag ({{count}})",
-  "searchProduct": "Search for products..."
+  "searchProduct": "Search for products...",
+  "notFoundPage": "The page you are looking for has been renamed, removed or perhaps never existed.",
+  "notFoundButtonMessage": "Return to Home Page"
 }
