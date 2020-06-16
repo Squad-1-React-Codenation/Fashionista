@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 export const NotFound = () => {
   const { t } = useTranslation();
-  let history = useHistory();
+  const history = useHistory();
   const buttonHandler = () => history.push("/");
 
   return (
@@ -15,7 +15,7 @@ export const NotFound = () => {
       <h1>Opss!</h1>
       <h3 className="not-found__text">{t("notFoundPage")}</h3>
       <LargeButton onClick={buttonHandler}>
-      {t("notFoundButtonMessage")}
+        {t("notFoundButtonMessage")}
       </LargeButton>
     </div>
   );
