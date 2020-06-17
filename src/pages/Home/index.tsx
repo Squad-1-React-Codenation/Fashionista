@@ -7,11 +7,7 @@ import { ProductType } from "../../services/products/types";
 import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
-<<<<<<< HEAD
 import { getListing } from "../../store/products/actions";
-=======
-import { SearchInput } from "../../components/modules/searchInput";
->>>>>>> creating search input modal
 
 const Home = () => {
   const dispatch = useDispatch();
