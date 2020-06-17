@@ -27,7 +27,9 @@ const Home = () => {
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
       <SearchInput onSearchChange={() => {}} />
-      {products.length && <ModalCard product={products[0]} onProductClick={() => {}}></ModalCard>}
+      {products.length && (
+        <ModalCard product={products[0]} onProductClick={() => {}}></ModalCard>
+      )}
       Produtos - {products.length} items encontrados
       <div className="card__list">
         {products.map((product: ProductType) => (
