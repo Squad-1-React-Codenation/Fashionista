@@ -63,10 +63,64 @@
   color: var(--white);
 }
 
+.button--sizes-large {
+  width: 42px;
+  height: 34px;
+  /* Gray 4 */
+  border: 1px solid var(--gray-4);
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.button--sizes-large:hover {
+  background-color: var(--gray-6);
+}
+
+.button--sizesinfo-large {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  /* Gray 1 */
+  color: var(--gray-1);
+}
+
+.button--sizes {
+  width: 34px;
+  height: 34px;
+  /* Gray 4 */
+  border: 1px solid var(--gray-4);
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.button--sizes:hover {
+  background-color: var(--gray-6);
+}
+
+.button--sizesinfo {
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  /* Gray 1 */
+  color: var(--gray-1);
+}
+
 .button--discount {
   width: 49px;
   height: 18px;
-
+  cursor: none;
   /* Gray 1 */
   background: var(--gray-1);
 }
@@ -87,6 +141,7 @@
 .button--discount-large {
   width: 58px;
   height: 22px;
+  cursor: none;
 
   /* Gray 1 */
   background: var(--gray-1);
@@ -113,4 +168,62 @@
   background: none;
   color: var(--red);
   font: var(--body-2);
+}
+
+/* The container-sizes */
+.container-sizes {
+  position: relative;
+  padding-left: 38px;
+  margin-bottom: 12px;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  text-align: center;
+  /* Gray 1 */
+  color: var(--gray-1);
+}
+
+.container-sizes--large {
+  padding-left: 46px;
+}
+
+/* Hide the browser's default radio button */
+.container-sizes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  /* Gray 4 */
+  border: 1px solid var(--gray-4);
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding-top: 3px;
+}
+
+.checkmark--large {
+  width: 42px;
+}
+
+/* On mouse-over, add a grey background color */
+.container-sizes:hover input ~ .checkmark {
+  background-color: var(--gray-5);
+}
+
+/* When the radio button is checked */
+.container-sizes input:checked ~ .checkmark {
+  background-color: var(--gray-1);
+  color: var(--white);
 }

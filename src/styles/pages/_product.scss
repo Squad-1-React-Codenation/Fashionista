@@ -1,3 +1,120 @@
-span {
-  display: inline;
+.single__product {
+  width: 100%;
+  display: flex;
+  height: auto;
+  justify-content: left;
+}
+@media screen and (max-width: 1100px) {
+  .single__product .single__product-photo img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 728px) {
+  .single__product .product__content,
+  .single__product .single__product-photo {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .single__product {
+    flex-direction: column;
+  }
+
+  .single__product .single__product-photo button {
+    margin-left: 1.6rem;
+  }
+
+  .single__product .product__actions {
+    padding-left: 0px;
+  }
+}
+
+.single__product-photo {
+  display: flex;
+  padding: var(--padding-2) 0;
+  background-color: var(--white);
+  width: 50%;
+}
+
+.single__product-photo img {
+  width: 100%;
+}
+
+.product__content {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  width: 50%;
+}
+
+.product__content .product__name {
+  text-align: left;
+  font-size: var(--heading-1);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.05rem;
+}
+
+.product__name {
+  font-weight: 600;
+  margin-top: 0.625rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.product__content .product__pricing {
+  justify-content: left;
+}
+
+.product__pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__price {
+  font-size: var(--heading-2);
+}
+
+.product__price--from {
+  margin-right: 0.625rem;
+  font-size: var(--heading-2);
+  color: var(--gray-3);
+  text-decoration: line-through;
+}
+
+.product__content .product__price {
+  font-size: var(--heading-2);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.product__content .product__price--installments {
+  font-size: var(--heading-2);
+  margin-left: 0.625rem;
+  color: var(--gray-3);
+  font-weight: 600;
+}
+
+.product__sizes {
+  display: block;
+}
+
+.product__sizes__title {
+  color: var(--gray-3);
+  font-size: var(--body-2);
+  margin-bottom: 0.625rem;
+}
+
+.product__actions {
+  backface-visibility: hidden;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 1.6rem;
+  width: 100%;
+  z-index: 10;
+  padding-left: 0px;
 }

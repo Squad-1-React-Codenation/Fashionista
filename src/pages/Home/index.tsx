@@ -7,6 +7,7 @@ import { ProductType } from "../../services/types";
 import { Card } from "../../components/modules/card";
 import { SearchInput } from "../../components/modules/searchInput";
 import { ModalCard } from "../../components/modules/modalCard";
+import { Product } from "../Product";
 
 const Home = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -14,7 +15,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    productAPI().then((products) => setProducts(products));
+    productAPI("").then((products) => setProducts(products));
   }, []);
 
   return (
@@ -33,7 +34,7 @@ const Home = () => {
       Produtos - {products.length} items encontrados
       <div className="card__list">
         {products.map((product: ProductType) => (
-          <Card key={product.name} {...product}></Card>
+          <Card key={product.code_color} {...product}></Card>
         ))}
       </div>
     </div>
