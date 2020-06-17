@@ -8,5 +8,7 @@
   "removeFromBag": "Sacar de la bolsa",
   "searchTitle": "Buscar productos",
   "bagTitle": "Bolsa ({{count}})",
-  "searchProduct": "Buscar productos..."
+  "searchProduct": "Buscar productos...",
+  "notFoundPage": "La página que está buscando ha sido renombrada, eliminada o quizás nunca existió.",
+  "notFoundButtonMessage": "Regresar a la página principal"
 }

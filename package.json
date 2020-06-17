@@ -21,9 +21,10 @@
     "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
     "lint": "yarn eslint && yarn stylelint && yarn prettier && yarn tsc",
+    "lint:netlify": "yarn run stylelint & yarn run prettier",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
     "stylelint": "stylelint \"src/**/*.(scss)\"",
-    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\" --write"
+    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\""
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -38,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.2",
     "stylelint": "^13.3.3",

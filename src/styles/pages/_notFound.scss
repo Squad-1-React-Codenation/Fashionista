@@ -1,0 +1,10 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.not-found__text {
+  color: var(--gray-3);
+}

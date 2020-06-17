@@ -26,9 +26,12 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-      <SearchInput onSearchChange={() => {}} />
+      <SearchInput onSearchChange={() => false} />
       {products.length && (
-        <ModalCard product={products[0]} onProductClick={() => {}}></ModalCard>
+        <ModalCard
+          product={products[0]}
+          onProductClick={() => false}
+        ></ModalCard>
       )}
       Produtos - {products.length} items encontrados
       <div className="card__list">
