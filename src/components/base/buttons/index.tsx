@@ -8,6 +8,7 @@ type ButtonPropsType =
       disabled?: boolean;
       color?: "red";
       modifier: string;
+      sizes: string;
     };
 
 export const Button = (props: ButtonPropsType) => {
