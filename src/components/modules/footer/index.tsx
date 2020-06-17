@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { Instagram } from "../../base/iconsocial";
 import { Facebook } from "../../base/iconsocial";
 import { Twiter } from "../../base/iconsocial";
@@ -11,13 +13,13 @@ const Footer = () => {
           <h3>Sobre</h3>
           <ul className="item--footer">
             <li>
-              <a>A Marca</a>
+              <Link to="/">A Marca</Link>
             </li>
             <li>
-              <a>Imprensa</a>
+              <Link to="/">Imprensa</Link>
             </li>
             <li>
-              <a>Guid Shop</a>
+              <Link to="/">Guid Shop</Link>
             </li>
           </ul>
         </div>
@@ -25,13 +27,13 @@ const Footer = () => {
           <h3>Ajuda</h3>
           <ul className="item--footer">
             <li>
-              <a>Atendimento</a>
+              <Link to="/">Atendimento</Link>
             </li>
             <li>
-              <a>Frete</a>
+              <Link to="/">Frete</Link>
             </li>
             <li>
-              <a>Devolução</a>
+              <Link to="/">Devolução</Link>
             </li>
           </ul>
         </div>
@@ -39,13 +41,13 @@ const Footer = () => {
           <h3>Conta</h3>
           <ul className="item--footer">
             <li>
-              <a>Minha Conta</a>
+              <Link to="/">Minha Conta</Link>
             </li>
             <li>
-              <a>Pedidos</a>
+              <Link to="/">Pedidos</Link>
             </li>
             <li>
-              <a>Meus créditos</a>
+              <Link to="/">Meus créditos</Link>
             </li>
           </ul>
         </div>
@@ -61,10 +63,10 @@ const Footer = () => {
           <Twiter height={24} width={24} />
         </div>
       </div>
-      <div className="">
-        <a className="text-footer">
+      <div>
+        <Link to="/" className="text-footer">
           ©2009-2020 Todos os direitos reservados Undefined Group
-        </a>
+        </Link>
       </div>
     </div>
   );
