@@ -8,6 +8,7 @@ import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
 import { getProducts } from "../../store/products/actions";
+import { ModalCard } from "../../components/modules/modalCard";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,13 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+      {listing.length && (
+        <ModalCard
+          product={listing[0]}
+          onProductClick={() => false}
+        ></ModalCard>
+      )}
+      Produtos - {listing.length} items encontrados
       <div className="card__list">
         {listing.map((product: ProductType) => (
           <Card key={product.codeColor} {...product}></Card>

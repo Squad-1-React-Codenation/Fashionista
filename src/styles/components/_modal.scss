@@ -1,3 +1,36 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 375px;
+  transform: translateX(100%);
+  height: 100vh;
+  background: #f9f9f9;
+  transition: transform 0.2s ease;
+}
+
+.modal--is-on {
+  transform: translateX(0);
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.2s ease;
+}
+
+.modal__overlay--is-on {
+  transform: translateX(0);
+  opacity: 0.5;
+}
+
 .modal__header {
   display: flex;
   align-items: center;
