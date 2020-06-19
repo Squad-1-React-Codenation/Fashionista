@@ -70,6 +70,21 @@
   width: 100%;
 }
 
+.modal__search-list {
+  overflow: auto;
+  height: 100%;
+  margin-top: var(--margin-2);
+  padding: var(--padding-1);
+}
+
+.modal__empty-list {
+  display: flex;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-3);
+}
+
 .modal__card {
   width: 100%;
   display: flex;
@@ -84,8 +99,18 @@
   padding: var(--padding-2) 0;
 }
 
+.modal__product-image {
+  display: flex;
+  flex-direction: column;
+}
+
 .modal__card-product img {
   width: 25%;
+}
+
+.modal__product-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__product-name {

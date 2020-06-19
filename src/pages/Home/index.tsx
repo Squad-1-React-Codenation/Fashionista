@@ -35,12 +35,6 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-      {listing.length && (
-        <ModalCard
-          product={listing[0]}
-          onProductClick={() => false}
-        ></ModalCard>
-      )}
       Produtos - {listing.length} items encontrados
       <div className="card__list">
         {listing.map((product: ProductType) => (

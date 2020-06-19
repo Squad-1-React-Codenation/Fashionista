@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import { BackArrowIcon } from "../icons";
@@ -11,7 +11,12 @@ type PropsType = {
   close: () => void;
   children: React.ReactChild | React.ReactChild[];
 };
-const Modal = ({ title, children, isOpen, close }: PropsType) => {
+
+export const Modal = ({ title, children, isOpen, close }: PropsType) => {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ?  "hidden" : "auto";
+  },[isOpen])
+
   return ReactDOM.createPortal(
     <>
       <div
@@ -33,4 +38,3 @@ const Modal = ({ title, children, isOpen, close }: PropsType) => {
   );
 };
 
-export default Modal;
