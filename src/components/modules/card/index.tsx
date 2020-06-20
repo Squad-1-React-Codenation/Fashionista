@@ -12,7 +12,7 @@ export const Card = (product: ProductType) => {
           <DiscountInfoButton>
             {product.discount_percentage}
           </DiscountInfoButton>
-        </div>       
+        </div>
       )
       : (<span></span>)}
       <div className="card__name"> {product.name} </div>
