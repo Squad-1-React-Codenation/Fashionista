@@ -2,6 +2,7 @@
   text-align: center;
   width: calc(25% - 16px);
   margin: 16px 0;
+  position: relative;
 }
 
 @media screen and (max-width: 800px) {
@@ -48,7 +49,8 @@
 }
 
 .card__discount-button {
-  position: relative;
-  bottom: 410px;
-  left: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
 }
