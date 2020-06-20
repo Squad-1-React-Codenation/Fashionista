@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import Home from "../Home/index";
-import "../../i18n";
+import "../../config/locales/i18n";
 
 jest.mock("../../services/productAPI");
 
