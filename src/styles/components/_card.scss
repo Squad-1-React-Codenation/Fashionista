@@ -48,9 +48,11 @@
   justify-content: center;
 }
 
-.card__discount-button {
+.card__discount-badge {
   position: absolute;
   top: 0;
   right: 0;
-  color: #fff; 
+  color: #fff;
+  background-color: #000;
+  padding: 0 var(--padding-5);
 }
