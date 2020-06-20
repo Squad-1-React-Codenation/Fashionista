@@ -28,13 +28,12 @@
 
 .header__cart--qtde {
   background-color: var(--red);
-  border-radius: 50%;
-  color:white;
+  padding: 0 var(--padding-4);
+  color: #fff;
   font-size: var(--heading-3);
   font-weight: bold;
   position: absolute;
   text-align: center;
   margin-left: -8px;
-  width: var( --heading-2);
-  height: var( --heading-2);
+  height: var(--heading-2);
 }

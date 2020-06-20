@@ -22,32 +22,6 @@ export const SquareSharpButton = (props: ButtonPropsType) => {
   return <Button {...props} modifier="button--squareSharp" />;
 };
 
-export const QtdInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--qtd button--qtdinfo" />;
-};
-
-export const QtdInfoButtonSamll = (props: ButtonPropsType) => {
-  return (
-    <Button
-      {...props}
-      modifier="button--qtd button--qtdinfo button--qtd-small"
-    />
-  );
-};
-
-export const DiscountInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--discount button--discountinfo" />;
-};
-
-export const LargeDiscountInfoButton = (props: ButtonPropsType) => {
-  return (
-    <Button
-      {...props}
-      modifier="button--discount-large button--discountinfo-large"
-    />
-  );
-};
-
 export const LargeButton = (props: ButtonPropsType) => {
   return <Button {...props} modifier="button--large" />;
 };
