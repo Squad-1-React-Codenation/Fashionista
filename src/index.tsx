@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "./config/i18n/i18n";
 
@@ -8,16 +9,19 @@ import Footer from "./components/modules/footer";
 import Header from "./components/modules/header";
 
 import "./styles/main.scss";
+import store from "./store";
 
 const App = () => (
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <div className="container">
-        <Routes />
-      </div>
-      <Footer />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <div className="container">
+          <Routes />
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

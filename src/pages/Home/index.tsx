@@ -1,24 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
-import { productAPI } from "../../services/productAPI";
+import { useDispatch, useSelector } from "react-redux";
+
 import { ProductType } from "../../services/types";
+import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
-import { SearchInput } from "../../components/modules/searchInput";
-import { ModalCard } from "../../components/modules/modalCard";
+import { getProducts } from "../../store/products/actions";
 
 const Home = () => {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const dispatch = useDispatch();
+  const { loading, listing } = useSelector(
+    (state: StoreState) => state.products
+  );
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    productAPI("").then((products) => setProducts(products));
-  }, []);
+    dispatch(getProducts());
+  }, [dispatch]);
+
+  if (loading || !listing.length) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div>
+    <>
       <Helmet>
         <html lang={t("lang")} />
         <title>{t("title")}</title>
@@ -26,20 +34,12 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-      <SearchInput onSearchChange={() => false} />
-      {products.length && (
-        <ModalCard
-          product={products[0]}
-          onProductClick={() => false}
-        ></ModalCard>
-      )}
-      Produtos - {products.length} items encontrados
       <div className="card__list">
-        {products.map((product: ProductType) => (
+        {listing.map((product: ProductType) => (
           <Card key={product.code_color} {...product}></Card>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
