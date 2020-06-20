@@ -25,3 +25,16 @@
   align-items: center;
   justify-items: center;
 }
+
+.header__cart--qtde {
+  background-color: var(--red);
+  padding: 0 var(--padding-4);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: var(--heading-3);
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  margin-left: -8px;
+  height: var(--heading-2);
+}

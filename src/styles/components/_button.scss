@@ -40,18 +40,6 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-.button--qtd {
-  width: 28px;
-  height: 18px;
-  /* Red */
-  background: var(--red);
-  border-radius: 18px;
-}
-
-.button--qtd-small {
-  width: 18px;
-}
-
 .button--qtdinfo {
   padding: 0px;
   font-family: "Noto Sans", sans-serif;
@@ -61,48 +49,6 @@
   /* identical to box height, or 12px */
   text-align: center;
   color: var(--white);
-}
-
-.button--discount {
-  width: 49px;
-  height: 18px;
-
-  /* Gray 1 */
-  background: var(--gray-1);
-}
-
-.button--discountinfo {
-  /* Body 1 */
-  font-family: "Noto Sans", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  /* or 24px */
-  text-align: center;
-
-  /* Gray 6 */
-  color: var(--gray-6);
-}
-
-.button--discount-large {
-  width: 58px;
-  height: 22px;
-
-  /* Gray 1 */
-  background: var(--gray-1);
-}
-
-.button--discountinfo-large {
-  /* Body 1 */
-  font-family: "Noto Sans", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  /* or 24px */
-  text-align: center;
-
-  /* Gray 6 */
-  color: var(--gray-6);
 }
 
 .button--outline {
