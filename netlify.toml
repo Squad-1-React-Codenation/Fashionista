@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "build/"
-  command = "yarn run lint:netlify & yarn run build"
+  command = "yarn run lint:netlify && yarn run test && yarn run build"
   functions = "src/functions/"
   ignore = "git diff --quiet HEAD^ HEAD src/"
 
