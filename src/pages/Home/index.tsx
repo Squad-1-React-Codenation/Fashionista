@@ -7,7 +7,6 @@ import { ProductType } from "../../services/types";
 import { Card } from "../../components/modules/card";
 import { SearchInput } from "../../components/modules/searchInput";
 import { ModalCard } from "../../components/modules/modalCard";
-import { Product } from "../Product";
 
 const Home = () => {
   const [products, setProducts] = useState<ProductType[]>([]);

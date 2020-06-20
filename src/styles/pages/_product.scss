@@ -47,13 +47,6 @@
   width: 50%;
 }
 
-.product__content .product__name {
-  text-align: left;
-  font-size: var(--heading-1);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.05rem;
-}
-
 .product__name {
   font-weight: 600;
   margin-top: 0.625rem;
@@ -65,8 +58,11 @@
   width: 100%;
 }
 
-.product__content .product__pricing {
-  justify-content: left;
+.product__content .product__name {
+  text-align: left;
+  font-size: var(--heading-1);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.05rem;
 }
 
 .product__pricing {
@@ -75,11 +71,15 @@
   align-items: center;
 }
 
+.product__content .product__pricing {
+  justify-content: left;
+}
+
 .product__price {
   font-size: var(--heading-2);
 }
 
-.product__price--from {
+.product__price-from {
   margin-right: 0.625rem;
   font-size: var(--heading-2);
   color: var(--gray-3);
@@ -92,7 +92,7 @@
   font-weight: 600;
 }
 
-.product__content .product__price--installments {
+.product__content .product__price-installments {
   font-size: var(--heading-2);
   margin-left: 0.625rem;
   color: var(--gray-3);
@@ -103,7 +103,7 @@
   display: block;
 }
 
-.product__sizes__title {
+.product__sizes-title {
   color: var(--gray-3);
   font-size: var(--body-2);
   margin-bottom: 0.625rem;
