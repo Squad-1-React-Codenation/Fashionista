@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "./config/locales/i18n";
+import "./config/i18n/i18n";
 
 import Routes from "./routes";
 import Footer from "./components/modules/footer";

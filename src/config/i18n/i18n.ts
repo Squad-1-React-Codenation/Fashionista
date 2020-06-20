@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { en, es, ptBR } from ".";
+import { en, es, ptBR } from "../locales";
 
 const resources = {
   "pt-BR": { translation: ptBR },
