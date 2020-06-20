@@ -14,8 +14,8 @@ type PropsType = {
 
 export const Modal = ({ title, children, isOpen, close }: PropsType) => {
   useEffect(() => {
-    document.body.style.overflow = isOpen ?  "hidden" : "auto";
-  },[isOpen])
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   return ReactDOM.createPortal(
     <>
@@ -37,4 +37,3 @@ export const Modal = ({ title, children, isOpen, close }: PropsType) => {
     document.getElementById("modal-root")!
   );
 };
-

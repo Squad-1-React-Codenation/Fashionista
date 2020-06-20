@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Modal } from "../../base/modal";
-import { SearchInput } from "../../modules/searchInput";
 import { ModalCard } from "../../modules/modalCard";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +13,7 @@ type PropsType = {
 
 export const BagModal = ({ isOpen, close }: PropsType) => {
   const [products, setProducts] = useState<ProductType[]>([]);
-  const [count, setCount] = useState(0)
+  const [count] = useState(0);
 
   const { t } = useTranslation();
 
@@ -23,11 +22,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
   }, []);
 
   return (
-    <Modal
-      title={t("bagTitle", { count })}
-      isOpen={isOpen}
-      close={close}
-    >
+    <Modal title={t("bagTitle", { count })} isOpen={isOpen} close={close}>
       <div className="modal__search-list">
         {products.length ? (
           products.map((product: ProductType) => (
@@ -39,12 +34,9 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
             ></ModalCard>
           ))
         ) : (
-          <div className="modal__empty-list">
-            Opss! Aqui não tem nada :/
-          </div>
+          <div className="modal__empty-list">Opss! Aqui não tem nada :/</div>
         )}
       </div>
     </Modal>
-  )
-}
-
+  );
+};

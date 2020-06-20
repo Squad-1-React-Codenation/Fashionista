@@ -21,11 +21,11 @@ const Header = () => {
             <span className="header__cart--qtde">1</span>
           </Button>
         </div>
-        <SearchModal 
+        <SearchModal
           isOpen={modal.search && modal.open}
           close={() => setModal({ ...modal, open: false })}
         />
-        <BagModal 
+        <BagModal
           isOpen={!modal.search && modal.open}
           close={() => setModal({ ...modal, open: false })}
         />

@@ -22,12 +22,8 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
   }, []);
 
   return (
-    <Modal
-      title={t("searchTitle")}
-      isOpen={isOpen}
-      close={close}
-    >
-      <SearchInput onSearchChange={() => {}}/>
+    <Modal title={t("searchTitle")} isOpen={isOpen} close={close}>
+      <SearchInput onSearchChange={() => false} />
       <div className="modal__search-list">
         {products.length ? (
           products.map((product: ProductType) => (
@@ -45,6 +41,5 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         )}
       </div>
     </Modal>
-  )
-}
-
+  );
+};
