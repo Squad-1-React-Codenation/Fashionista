@@ -29,7 +29,8 @@
 .header__cart--qtde {
   background-color: var(--red);
   padding: 0 var(--padding-4);
-  color: #fff;
+  border-radius: 50%;
+  color: var(--white);
   font-size: var(--heading-3);
   font-weight: bold;
   position: absolute;
