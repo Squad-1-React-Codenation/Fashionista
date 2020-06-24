@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-redux": "^7.1.9",
     "i18next": "^19.4.5",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
@@ -10,21 +11,26 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-i18next": "^11.5.0",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "yarn test --coverage --watchAll",
+    "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint && yarn stylelint && yarn prettier && yarn tsc",
-    "lint:netlify": "yarn run stylelint & yarn run prettier",
+    "lint": "yarn run eslint && yarn run stylelint && yarn run prettier && yarn run tsc",
+    "lint:netlify": "yarn run stylelint & yarn run prettier & yarn run tsc",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
     "stylelint": "stylelint \"src/**/*.(scss)\"",
-    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\""
+    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\"",
+    "tsc": "tsc --noEmit"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",

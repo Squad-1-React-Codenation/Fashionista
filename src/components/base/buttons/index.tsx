@@ -8,6 +8,7 @@ type ButtonPropsType =
       disabled?: boolean;
       color?: "red";
       modifier: string;
+      sizes: string;
     };
 
 export const Button = (props: ButtonPropsType) => {
@@ -22,29 +23,14 @@ export const SquareSharpButton = (props: ButtonPropsType) => {
   return <Button {...props} modifier="button--squareSharp" />;
 };
 
-export const QtdInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--qtd button--qtdinfo" />;
-};
-
-export const QtdInfoButtonSamll = (props: ButtonPropsType) => {
+export const SizeInfoButton = (props: ButtonPropsType) => {
   return (
-    <Button
-      {...props}
-      modifier="button--qtd button--qtdinfo button--qtd-small"
-    />
-  );
-};
-
-export const DiscountInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--discount button--discountinfo" />;
-};
-
-export const LargeDiscountInfoButton = (props: ButtonPropsType) => {
-  return (
-    <Button
-      {...props}
-      modifier="button--discount-large button--discountinfo-large"
-    />
+    <label className={`container-sizes container-sizes--${props.modifier}`}>
+      <input type="radio" name="radio-size" value={props.value} />
+      <span className={`checkmark checkmark--${props.modifier}`}>
+        {props.sizes}
+      </span>
+    </label>
   );
 };
 
