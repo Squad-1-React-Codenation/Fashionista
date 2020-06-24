@@ -34,17 +34,6 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-<<<<<<< HEAD
-=======
-      <SearchInput onSearchChange={() => false} />
-      {products.length && (
-        <ModalCard
-          product={products[0]}
-          onProductClick={() => false}
-        ></ModalCard>
-      )}
-      Produtos - {products.length} items encontrados
->>>>>>> origin
       <div className="card__list">
         {listing.map((product: ProductType) => (
           <Card key={product.code_color} {...product}></Card>
