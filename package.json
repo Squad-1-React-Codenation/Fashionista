@@ -25,12 +25,20 @@
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
+<<<<<<< HEAD
     "lint": "yarn run eslint && yarn run stylelint && yarn run prettier && yarn run tsc",
     "lint:netlify": "yarn run stylelint & yarn run prettier & yarn run tsc",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
     "stylelint": "stylelint \"src/**/*.(scss)\"",
     "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\"",
     "tsc": "tsc --noEmit"
+=======
+    "lint": "yarn eslint && yarn stylelint && yarn prettier && yarn tsc",
+    "lint:netlify": "yarn run stylelint & yarn run prettier",
+    "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
+    "stylelint": "stylelint \"src/**/*.(scss)\"",
+    "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\""
+>>>>>>> origin
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
