@@ -5,8 +5,9 @@ import thunk from "redux-thunk";
 import { productAPI } from "../services/productAPI";
 
 import productReducer from "./products/reducer";
+import cartReducer from "./cart/reducer";
 
-const rootReducer = combineReducers({ products: productReducer });
+const rootReducer = combineReducers({ products: productReducer, cart: cartReducer });
 
 const store = createStore(
   rootReducer,
