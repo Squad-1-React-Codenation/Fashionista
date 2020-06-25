@@ -23,36 +23,15 @@ export const SquareSharpButton = (props: ButtonPropsType) => {
   return <Button {...props} modifier="button--squareSharp" />;
 };
 
-export const QtdInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--qtd button--qtdinfo" />;
-};
-
-export const QtdInfoButtonSamll = (props: ButtonPropsType) => {
-  return (
-    <Button
-      {...props}
-      modifier="button--qtd button--qtdinfo button--qtd-small"
-    />
-  );
-};
-
-export const DiscountInfoButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--discount button--discountinfo" />;
-};
-
-export const LargeDiscountInfoButton = (props: ButtonPropsType) => {
-  return (
-    <Button
-      {...props}
-      modifier="button--discount-large button--discountinfo-large"
-    />
-  );
-};
-
 export const SizeInfoButton = (props: ButtonPropsType) => {
   return (
-    <label className={`container-sizes container-sizes--${props.modifier}`}>
-      <input type="radio" name="radio-size" value={props.value} />
+    <label className={`containersizes containersizes--${props.modifier}`}>
+      <input
+        className="containersizes--input"
+        type="radio"
+        name="radio-size"
+        value={props.value}
+      />
       <span className={`checkmark checkmark--${props.modifier}`}>
         {props.sizes}
       </span>

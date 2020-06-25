@@ -17,6 +17,7 @@ const Header = () => {
           </Button>
           <Button onClick={cartHandler}>
             <ShoppingCartICon />
+            <span className="header__cart--qtde">1</span>
           </Button>
         </div>
       </div>
