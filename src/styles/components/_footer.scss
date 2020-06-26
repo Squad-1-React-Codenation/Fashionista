@@ -1,9 +1,8 @@
 .footer {
   background-color: #efefef;
-  height: 170px;
-  border: 10px;
-  padding: 80px;
+  height: 285px;
   position: relative;
+  width: 100%;
 }
 
 .container-footer {
@@ -23,9 +22,9 @@
   height: auto;
 }
 .text-footer {
-  align-content: center;
-  font-size: small;
-  position: relative;
+  display: flex;
+  font-size: 8px;
+  padding-top: 30px;
 }
 
 .footer__primary {
@@ -54,4 +53,20 @@
 .footer--infos--item {
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.footer-legal {
+  border-top: 1px solid #cccccc;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 12px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.center-this {
+  display: table;
+  margin: auto;
+  text-align: center;
 }
