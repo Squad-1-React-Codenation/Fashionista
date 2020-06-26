@@ -8,7 +8,6 @@ import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
 import { getProducts } from "../../store/products/actions";
-import { addToCart } from "../../store/cart/actions";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -40,7 +39,6 @@ const Home = () => {
         {listing.map((product: ProductType) => (
           <>
             <Card key={product.codeColor} {...product}></Card>
-            <button onClick={() => dispatch(addToCart(product))}>add</button>
           </>
         ))}
       </div>

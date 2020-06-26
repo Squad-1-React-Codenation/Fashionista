@@ -1,5 +1,5 @@
 import { CartActionTypes, CartAction } from "./types";
-import { ProductType } from "../../services/types";
+import { ProductType } from "../../services/products/types";
 
 export const addToCart = (product: ProductType): CartActionTypes => ({
   type: CartAction.ADD_TO_CART,

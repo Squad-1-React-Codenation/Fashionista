@@ -6,7 +6,10 @@ import ProductsAPI from "../services/products";
 import productReducer from "./products/reducer";
 import cartReducer from "./cart/reducer";
 
-const rootReducer = combineReducers({ products: productReducer, cart: cartReducer });
+const rootReducer = combineReducers({
+  products: productReducer,
+  cart: cartReducer,
+});
 
 const thunkExtraArguments = { productsAPI: new ProductsAPI() };
 export type ThunkExtraArguments = typeof thunkExtraArguments;

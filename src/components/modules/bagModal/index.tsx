@@ -4,9 +4,9 @@ import { ModalCard } from "../../modules/modalCard";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ProductType } from "../../../services/types";
 import { StoreState } from "../../../store";
 import { removeFromCart } from "../../../store/cart/actions";
+import { ProductType } from "../../../services/products/types";
 
 type PropsType = {
   isOpen: boolean;
@@ -15,9 +15,7 @@ type PropsType = {
 
 export const BagModal = ({ isOpen, close }: PropsType) => {
   const dispatch = useDispatch();
-  const { count, listing } = useSelector(
-    (state: StoreState) => state.cart
-  );
+  const { count, listing } = useSelector((state: StoreState) => state.cart);
 
   const removeProduct = (productId: string) => {
     dispatch(removeFromCart(productId));

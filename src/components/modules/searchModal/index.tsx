@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { Modal } from "../../base/modal";
 import { SearchInput } from "../../modules/searchInput";
 import { ModalCard } from "../../modules/modalCard";
-import { useTranslation } from "react-i18next";
 
-import { productAPI } from "../../../services/productAPI";
-import { ProductType } from "../../../services/types";
+import { ProductType } from "../../../services/products/types";
 
 type PropsType = {
   isOpen: boolean;
@@ -13,13 +13,9 @@ type PropsType = {
 };
 
 export const SearchModal = ({ isOpen, close }: PropsType) => {
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const [products] = useState<ProductType[]>([]);
 
   const { t } = useTranslation();
-
-  useEffect(() => {
-    productAPI("").then((products) => setProducts(products));
-  }, []);
 
   return (
     <Modal title={t("searchTitle")} isOpen={isOpen} close={close}>
@@ -32,7 +28,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
               product={product}
               onProductClick={() => false}
               isBag={false}
-              onRemoveProduct={() => {}}
+              onRemoveProduct={() => false}
             ></ModalCard>
           ))
         ) : (

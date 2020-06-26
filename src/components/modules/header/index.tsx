@@ -10,9 +10,7 @@ import { StoreState } from "../../../store";
 const Header = () => {
   const [modal, setModal] = useState({ open: false, search: false });
 
-  const { count } = useSelector(
-    (state: StoreState) => state.cart
-  );
+  const { count } = useSelector((state: StoreState) => state.cart);
 
   return (
     <header className="header">
@@ -24,7 +22,7 @@ const Header = () => {
           </Button>
           <Button onClick={() => setModal({ search: false, open: true })}>
             <ShoppingCartICon />
-            {count ? <span className="header__cart--qtde">{count}</span> : null }
+            {count ? <span className="header__cart--qtde">{count}</span> : null}
           </Button>
         </div>
         <SearchModal

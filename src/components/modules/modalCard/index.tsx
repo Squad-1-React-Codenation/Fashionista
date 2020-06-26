@@ -14,7 +14,7 @@ type ModalCardPropsType = {
 export const ModalCard = (props: ModalCardPropsType) => {
   return (
     <div
-      className="`modal__card ${!props.isBag ? 'modal__card--is-search' : ''}`"
+      className={`modal__card ${!props.isBag ? "modal__card--is-search" : ""}`}
       onClick={props.onProductClick}
       role="button"
       tabIndex={0}
