@@ -1,6 +1,7 @@
 import { ThunkAction } from "redux-thunk";
-import { ProductType } from "./../../services/types.d";
-import { productAPI } from "../../services/productAPI";
+
+import { ProductType } from "../../services/products/types";
+import { ThunkExtraArguments } from "..";
 
 export enum ProductAction {
   FETCH_BEGIN = "FETCH_BEGIN",
@@ -19,7 +20,7 @@ export interface SetProductsAction {
 export type AsyncProductThunkAction = ThunkAction<
   Promise<void>,
   ProductStateType,
-  { productAPI: typeof productAPI },
+  ThunkExtraArguments,
   ProductActionsTypes
 >;
 

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ProductType } from "../../services/types";
+import { ProductType } from "../../services/products/types";
 import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
@@ -36,7 +36,7 @@ const Home = () => {
       </Helmet>
       <div className="card__list">
         {listing.map((product: ProductType) => (
-          <Card key={product.code_color} {...product}></Card>
+          <Card key={product.codeColor} {...product}></Card>
         ))}
       </div>
     </>

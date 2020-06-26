@@ -3,7 +3,7 @@ import {
   ProductActionsTypes,
   AsyncProductThunkAction,
 } from "./types";
-import { ProductType } from "../../services/types";
+import { ProductType } from "../../services/products/types";
 
 export const fetchBegin = (): ProductActionsTypes => ({
   type: ProductAction.FETCH_BEGIN,
@@ -17,10 +17,10 @@ export const setProducts = (products: ProductType[]): ProductActionsTypes => ({
 export const getProducts = (): AsyncProductThunkAction => async (
   dispatch,
   _,
-  { productAPI }
+  { productsAPI }
 ): Promise<void> => {
   dispatch(fetchBegin());
 
-  const products = await productAPI("");
+  const products = await productsAPI.getCatalog();
   dispatch(setProducts(products));
 };
