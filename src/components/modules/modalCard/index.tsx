@@ -6,14 +6,15 @@ import { Button } from "../../base/buttons";
 
 type ModalCardPropsType = {
   product: ProductType;
-  onProductClick: () => void;
   isBag: boolean;
+  onProductClick: () => void;
+  onRemoveProduct: (productId: string) => void;
 };
 
 export const ModalCard = (props: ModalCardPropsType) => {
   return (
     <div
-      className="modal__card"
+      className="`modal__card ${!props.isBag ? 'modal__card--is-search' : ''}`"
       onClick={props.onProductClick}
       role="button"
       tabIndex={0}
@@ -21,13 +22,19 @@ export const ModalCard = (props: ModalCardPropsType) => {
       <div className="modal__card-product">
         <div className="modal__product-image">
           <img src={props.product.image} alt="" />
-          <Button>Remover</Button>
+          {props.isBag && (
+            <Button onClick={() => props.onRemoveProduct(props.product.style)}>
+              Remover
+            </Button>
+          )}
         </div>
         <div className="modal__product-info">
           <span className="modal__product-name">{props.product.name}</span>
-          <span className="modal__product-size">
-            {`Tam.: ${props.product.sizes[0].size}`}
-          </span>
+          {props.isBag && (
+            <span className="modal__product-size">
+              {`Tam.: ${props.product.sizes[0].size}`}
+            </span>
+          )}
         </div>
       </div>
       <div className="modal__card-payment">

@@ -18,7 +18,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    productAPI().then((products) => setProducts(products));
+    productAPI("").then((products) => setProducts(products));
   }, []);
 
   return (
@@ -32,6 +32,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
               product={product}
               onProductClick={() => false}
               isBag={false}
+              onRemoveProduct={() => {}}
             ></ModalCard>
           ))
         ) : (

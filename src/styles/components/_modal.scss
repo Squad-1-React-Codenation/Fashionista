@@ -8,6 +8,7 @@
   height: 100vh;
   background: #f9f9f9;
   transition: transform 0.2s ease;
+  z-index: 2;
 }
 
 .modal--is-on {
@@ -24,6 +25,7 @@
   opacity: 0;
   transform: translateX(100%);
   transition: opacity 0.2s ease;
+  z-index: 2;
 }
 
 .modal__overlay--is-on {
@@ -91,6 +93,9 @@
   height: auto;
   justify-content: space-between;
   border-bottom: 1px solid var(--gray-5);
+}
+
+.modal__card--is-search {
   cursor: pointer;
 }
 

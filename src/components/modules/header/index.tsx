@@ -4,9 +4,15 @@ import { Button } from "../../base/buttons";
 import { ShoppingCartICon, SearchIcon } from "../../base/icons";
 import { SearchModal } from "../../modules/searchModal";
 import { BagModal } from "../../modules/bagModal";
+import { useSelector } from "react-redux";
+import { StoreState } from "../../../store";
 
 const Header = () => {
   const [modal, setModal] = useState({ open: false, search: false });
+
+  const { count } = useSelector(
+    (state: StoreState) => state.cart
+  );
 
   return (
     <header className="header">
@@ -18,7 +24,7 @@ const Header = () => {
           </Button>
           <Button onClick={() => setModal({ search: false, open: true })}>
             <ShoppingCartICon />
-            <span className="header__cart--qtde">1</span>
+            {count ? <span className="header__cart--qtde">{count}</span> : null }
           </Button>
         </div>
         <SearchModal
