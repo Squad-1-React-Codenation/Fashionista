@@ -3,3 +3,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.home_loader {
+  width: calc(25% - 16px);
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .home_loader {
+    width: calc(50% - 48px);
+    height: auto;
+  }
+}
