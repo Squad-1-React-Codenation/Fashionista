@@ -25,8 +25,13 @@ export const SquareSharpButton = (props: ButtonPropsType) => {
 
 export const SizeInfoButton = (props: ButtonPropsType) => {
   return (
-    <label className={`container-sizes container-sizes--${props.modifier}`}>
-      <input type="radio" name="radio-size" value={props.value} />
+    <label className={`sizes sizes--${props.modifier}`}>
+      <input
+        className="sizes--input"
+        type="radio"
+        name="radio-size"
+        value={props.value}
+      />
       <span className={`checkmark checkmark--${props.modifier}`}>
         {props.sizes}
       </span>

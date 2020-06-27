@@ -15,8 +15,8 @@ export const Product = () => {
   if (!product) return <span>Loading</span>;
 
   return (
-    <div className="single__product">
-      <div className="single__product-photo">
+    <div className="singleProduct">
+      <div className="singleProduct__photo">
         <img src={product.image} alt="" />
         {product.discount_percentage && (
           <span>-{product.discount_percentage}</span>
@@ -26,14 +26,14 @@ export const Product = () => {
         <h3 className="product__name">{product.name}</h3>
         <div className="product__pricing">
           {product.on_sale && (
-            <span className="product__price product__price-from">
+            <span className="productPrice productPrice__from">
               {product.regular_price}
             </span>
           )}
-          <span className="product__price product__price-to">
+          <span className="productPrice productPrice__to">
             {product.actual_price}
           </span>
-          <span className="product__price product__price-installments">
+          <span className="productPrice productPrice__installments">
             em até {product.installments}
           </span>
         </div>
