@@ -34,9 +34,12 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+      Produtos - {listing.length} items encontrados
       <div className="card__list">
         {listing.map((product: ProductType) => (
-          <Card key={product.codeColor} {...product}></Card>
+          <>
+            <Card key={product.codeColor} {...product}></Card>
+          </>
         ))}
       </div>
     </>
