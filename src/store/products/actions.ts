@@ -61,7 +61,7 @@ export const getProduct = (id: string): AsyncProductThunkAction => async (
   try {
     const { product, additionalColors } = await productsAPI.getProduct(id);
     if (!product) {
-      throw "NOT FOUND";
+      throw new Error("NOT FOUND");
     }
     fetchProductSucceeced(product, additionalColors || []);
   } catch {
