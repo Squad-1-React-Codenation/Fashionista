@@ -25,6 +25,11 @@ export const Facebook = ({ height, width }: SocialIconsType) => {
 
 export const Twiter = ({ height, width }: SocialIconsType) => {
   return (
-    <img src="img/black-twitter.png" alt="Twitter" height={height} width={width} />
+    <img
+      src="img/black-twitter.png"
+      alt="Twitter"
+      height={height}
+      width={width}
+    />
   );
 };
