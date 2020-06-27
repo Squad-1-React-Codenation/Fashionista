@@ -61,7 +61,7 @@
   font: var(--body-2);
 }
 
-.containersizes {
+.sizes {
   position: relative;
   padding-left: 38px;
   margin-bottom: 12px;
@@ -76,12 +76,12 @@
   color: var(--gray-1);
 }
 
-.containersizes--large {
+.sizes--large {
   padding-left: 46px;
 }
 
 /* Hide the browser's default radio button */
-.containersizes--input {
+.sizes--input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -104,12 +104,12 @@
 }
 
 /* On mouse-over, add a grey background color */
-.containersizes--input:hover ~ .checkmark {
+.sizes--input:hover ~ .checkmark {
   background-color: var(--gray-5);
 }
 
 /* When the radio button is checked */
-.containersizes--input:checked ~ .checkmark {
+.sizes--input:checked ~ .checkmark {
   background-color: var(--gray-1);
   color: var(--white);
 }

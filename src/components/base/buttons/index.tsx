@@ -25,9 +25,9 @@ export const SquareSharpButton = (props: ButtonPropsType) => {
 
 export const SizeInfoButton = (props: ButtonPropsType) => {
   return (
-    <label className={`containersizes containersizes--${props.modifier}`}>
+    <label className={`sizes sizes--${props.modifier}`}>
       <input
-        className="containersizes--input"
+        className="sizes--input"
         type="radio"
         name="radio-size"
         value={props.value}
