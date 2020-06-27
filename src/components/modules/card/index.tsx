@@ -5,7 +5,10 @@ import { ProductType } from "../../../services/products/types";
 export const Card = (product: ProductType) => {
   return (
     <div className="card">
-      <img src={product.image ? product.image : 'img/image-not-found.png'} alt=""></img>
+      <img
+        src={product.image ? product.image : "img/image-not-found.png"}
+        alt=""
+      ></img>
       {product.onSale && (
         <div className="card__discount-badge">
           <span>{product.discountPercentage}%</span>
