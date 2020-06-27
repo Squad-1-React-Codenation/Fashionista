@@ -4,51 +4,71 @@ import { Link } from "react-router-dom";
 import { Instagram } from "../../base/iconsocial";
 import { Facebook } from "../../base/iconsocial";
 import { Twiter } from "../../base/iconsocial";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <div className="footer">
-      <div className="footer-legal">
+      <div className="footer__rights">
         <div className="footer__primary">
           <div className="footer--infos">
-            <h3>Sobre</h3>
+            <h3>{t("about")}</h3>
             <ul className="item--footer">
               <li>
-                <Link to="/">A Marca</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("brand")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Imprensa</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("press")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Guid Shop</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("guidshop")}
+                </Link>
               </li>
             </ul>
           </div>
           <div className="footer--infos">
-            <h3>Ajuda</h3>
+            <h3>{t("help")}</h3>
             <ul className="item--footer">
               <li>
-                <Link to="/">Atendimento</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("contactsus")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Frete</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("shipping")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Devolução</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("returns")}
+                </Link>
               </li>
             </ul>
           </div>
           <div className="footer--infos">
-            <h3>Conta</h3>
+            <h3>{t("info")}</h3>
             <div className="item--footer">
               <li>
-                <Link to="/">Conta</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("login")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Pedidos</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("orders")}
+                </Link>
               </li>
               <li>
-                <Link to="/">Créditos</Link>
+                <Link to="/" className="item__footer-link">
+                  {t("loyalty")}
+                </Link>
               </li>
             </div>
           </div>
@@ -65,11 +85,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="center-this">
-        <div className="text-footer">
-          ©2009-2020 Todos os direitos reservados
+          <div className="text-footer">{t("rights")}</div>
         </div>
       </div>
-      </div>            
     </div>
   );
 };

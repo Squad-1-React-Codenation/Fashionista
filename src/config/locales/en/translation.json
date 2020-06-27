@@ -10,5 +10,18 @@
   "bagTitle": "Bag ({{count}})",
   "searchProduct": "Search for products...",
   "notFoundPage": "The page you are looking for has been renamed, removed or perhaps never existed.",
-  "notFoundButtonMessage": "Return to Home Page"
+  "notFoundButtonMessage": "Return to Home Page",
+  "about":"About",
+  "brand":"Brand",
+  "press":"Press",
+  "guidshop":"Guid Shop",
+  "help":"Help",
+  "contactsus":"Contact Us",
+  "shipping":"Shipping",
+  "returns":"Returns",
+  "info":"Info",
+  "login":"Log In",
+  "orders":"Orders",
+  "loyalty":"Loyalty Program",
+  "rights":" ©2009-2020 All rights Reserved"
 }

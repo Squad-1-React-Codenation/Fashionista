@@ -1,28 +1,31 @@
 import React from "react";
-import { ProductType } from "../../../services/types";
-import imageNotFound from "../../../assets/image-not-found.png";
+
+import { ProductType } from "../../../services/products/types";
 
 export const Card = (product: ProductType) => {
   return (
     <div className="card">
-      <img src={product.image ? product.image : imageNotFound} alt=""></img>
-      {product.on_sale && (
+      <img
+        src={product.image ? product.image : "img/image-not-found.png"}
+        alt=""
+      ></img>
+      {product.onSale && (
         <div className="card__discount-badge">
-          <span>{product.discount_percentage}</span>
+          <span>{product.discountPercentage}%</span>
         </div>
       )}
       <div className="card__name"> {product.name} </div>
-      {product.on_sale ? (
+      {product.onSale ? (
         <div className="card__price">
           <div className="card__actual-price--sale">
-            {product.regular_price}
+            R$ {product.regularPrice}
           </div>
           <div className="card__regular-price--sale">
-            {product.actual_price}
+            R$ {product.actualPrice}
           </div>
         </div>
       ) : (
-        <div className="card__regular-price">{product.regular_price}</div>
+        <div className="card__regular-price">R$ {product.regularPrice}</div>
       )}
     </div>
   );

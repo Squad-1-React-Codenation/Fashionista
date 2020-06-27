@@ -38,6 +38,11 @@
   line-height: 23px;
 }
 
+.item__footer-link {
+  text-decoration: none;
+  color: var(--gray-1);
+}
+
 .footer h3 {
   display: block;
   font-size: 1.17em;
@@ -55,7 +60,7 @@
   letter-spacing: 2px;
 }
 
-.footer-legal {
+.footer__rights {
   border-top: 1px solid #cccccc;
   overflow: hidden;
   font-size: 12px;

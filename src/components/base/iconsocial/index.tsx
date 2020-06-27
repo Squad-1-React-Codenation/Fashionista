@@ -12,25 +12,37 @@ export const Instagram = ({ height, width }: SocialIconsType) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src="/insta.png" alt="Instagram" height={height} width={width} />
+      <img src="img/insta.png" alt="Instagram" height={height} width={width} />
     </a>
   );
 };
 
 export const Facebook = ({ height, width }: SocialIconsType) => {
   return (
-    <a href="https://www.facebook.com/" target="_blank"
-    rel="noopener noreferrer">
-      <img src="/facebook.png" alt="Facebook" height={height} width={width} />
-    </a>   
+    <a
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="img/facebook.png"
+        alt="Facebook"
+        height={height}
+        width={width}
+      />
+    </a>
   );
 };
 
 export const Twiter = ({ height, width }: SocialIconsType) => {
   return (
-    <a href="https://twitter.com/" target="_blank"
-    rel="noopener noreferrer">
-    <img src="/black-twitter.png" alt="Twitter" height={height} width={width} />
+    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+      <img
+        src="img/black-twitter.png"
+        alt="Twitter"
+        height={height}
+        width={width}
+      />
     </a>
   );
 };
