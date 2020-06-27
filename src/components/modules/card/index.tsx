@@ -2,13 +2,23 @@ import React from "react";
 
 import { ProductType } from "../../../services/products/types";
 
-export const Card = (product: ProductType) => {
+type PropsType = {
+  product: ProductType;
+  onClick: () => void;
+};
+export const Card = ({ product, onClick }: PropsType) => {
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={onClick}
+      onKeyDown={(e) => e.key === "Enter" && onClick()}
+      role="button"
+      tabIndex={0}
+    >
       <img
         src={product.image ? product.image : "img/image-not-found.png"}
         alt=""
-      ></img>
+      />
       {product.onSale && (
         <div className="card__discount-badge">
           <span>{product.discountPercentage}%</span>

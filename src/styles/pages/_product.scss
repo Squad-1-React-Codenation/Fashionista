@@ -118,3 +118,12 @@
   z-index: 10;
   padding-left: 0px;
 }
+
+.product__discount-badge {
+  height: 18px;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background-color: #000;
+  padding: 0 var(--padding-5);
+}

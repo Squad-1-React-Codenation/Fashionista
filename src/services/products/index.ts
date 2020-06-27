@@ -28,7 +28,7 @@ export default class ProductAPI {
   }
 
   public async getCatalog(): Promise<ProductType[]> {
-    const response = await fetch(this.baseURL + "/catalog");
+    const response = await fetch(this.baseURL + "/catalog?p=1&l=22");
     const products: ProductResponseType[] = await response.json();
 
     return products.map((product) => parseProduct(product));
@@ -38,7 +38,7 @@ export default class ProductAPI {
     style: string
   ): Promise<{
     product?: ProductType;
-    additionalColors: ProductType[] | null;
+    additionalColors: ProductType[];
   }> {
     const response = await fetch(`${this.baseURL}/catalog?search=${style}`);
     const productsResponse: ProductResponseType[] = await response.json();
