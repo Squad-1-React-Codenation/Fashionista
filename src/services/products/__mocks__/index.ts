@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { ProductType } from "../types";
+import { ProductResponseType } from "../types";
 
-export const mockedProducts: ProductType[] = [
+export const mockedProducts: ProductResponseType[] = [
   {
     name: "MOCKED VESTIDO TRANSPASSE BOW",
     style: "20002605",
@@ -65,12 +65,45 @@ export const mockedProducts: ProductType[] = [
       { available: false, size: "GG", sku: "5733_1000054_0_GG" },
     ],
   },
+  {
+    name: "MOCKED REGATA ALCINHA FOLK",
+    style: "20002570",
+    code_color: "20002570_612",
+    color_slug: "off-white",
+    color: "OFF WHITE",
+    on_sale: false,
+    regular_price: "R$ 99,90",
+    actual_price: "R$ 99,90",
+    discount_percentage: "",
+    installments: "3x R$ 33,30",
+    image:
+      "https://viniciusvinna.netlify.app/assets/api-fashionista/20002570_029_catalog_1.jpg",
+    sizes: [
+      {
+        available: true,
+        size: "PP",
+        sku: "5723_1000058_0_PP",
+      },
+      {
+        available: false,
+        size: "P",
+        sku: "5723_1000058_0_P",
+      },
+      {
+        available: true,
+        size: "M",
+        sku: "5723_1000058_0_M",
+      },
+      {
+        available: true,
+        size: "G",
+        sku: "5723_1000058_0_G",
+      },
+      {
+        available: true,
+        size: "GG",
+        sku: "5723_1000058_0_GG",
+      },
+    ],
+  },
 ];
-
-export const productAPI = (): Promise<ProductType[]> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockedProducts);
-    }, 500);
-  });
-};

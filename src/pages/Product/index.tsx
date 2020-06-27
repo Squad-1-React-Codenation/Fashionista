@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { LargeButton, SizeInfoButton } from "../../components/base/buttons";
-import { mockedProducts } from "../../services/__mocks__/productAPI";
+import { mockedProducts } from "../../services/products/__mocks__";
 
 const product = mockedProducts[0];
 export const Product = () => {
