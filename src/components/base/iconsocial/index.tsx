@@ -19,17 +19,30 @@ export const Instagram = ({ height, width }: SocialIconsType) => {
 
 export const Facebook = ({ height, width }: SocialIconsType) => {
   return (
-    <img src="img/facebook.png" alt="Facebook" height={height} width={width} />
+    <a
+      href="https://www.facebook.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="img/facebook.png"
+        alt="Facebook"
+        height={height}
+        width={width}
+      />
+    </a>
   );
 };
 
 export const Twiter = ({ height, width }: SocialIconsType) => {
   return (
-    <img
-      src="img/black-twitter.png"
-      alt="Twitter"
-      height={height}
-      width={width}
-    />
+    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+      <img
+        src="img/black-twitter.png"
+        alt="Twitter"
+        height={height}
+        width={width}
+      />
+    </a>
   );
 };
