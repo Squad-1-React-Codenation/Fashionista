@@ -9,6 +9,7 @@ import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
 import { getListing } from "../../store/products/actions";
+import { Loader } from "../../components/modules/loader";
 
 const Home = () => {
   const history = useHistory();
@@ -23,9 +24,13 @@ const Home = () => {
     dispatch(getListing());
   }, [dispatch]);
 
-  if (loading || !products.length) {
-    return <div>Loading...</div>;
-  }
+  const loaders = () => {
+    const loaders = [];
+    for (let i = 0; i < 22; i++) {
+      loaders.push(<Loader />);
+    }
+    return loaders;
+  };
 
   return (
     <>
@@ -36,7 +41,9 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-      Produtos - {products.length} items encontrados
+
+      {loading && loaders()}
+
       <div className="card__list">
         {products.map((product: ProductType) => (
           <>
@@ -44,7 +51,7 @@ const Home = () => {
               key={product.codeColor}
               product={product}
               onClick={() => history.push(`/produto/${product.style}`)}
-            ></Card>
+            />
           </>
         ))}
       </div>
