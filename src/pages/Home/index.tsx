@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { ProductType } from "../../services/products/types";
 import { StoreState } from "../../store";
@@ -11,6 +12,7 @@ import { getListing } from "../../store/products/actions";
 import { Loader } from "../../components/modules/loader";
 
 const Home = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { loading, products } = useSelector(
     (state: StoreState) => state.products.listing
@@ -45,7 +47,11 @@ const Home = () => {
       <div className="card__list">
         {products.map((product: ProductType) => (
           <>
-            <Card key={product.codeColor} {...product} />
+            <Card
+              key={product.codeColor}
+              product={product}
+              onClick={() => history.push(`/produto/${product.style}`)}
+            />
           </>
         ))}
       </div>

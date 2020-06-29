@@ -44,7 +44,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
             : props.product.regularPrice}
         </span>
         <span className="modal__card-installments">
-          {props.product.installments}
+          {props.product.installments.price}
         </span>
       </div>
     </div>
