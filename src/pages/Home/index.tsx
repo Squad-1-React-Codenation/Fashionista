@@ -22,6 +22,14 @@ const Home = () => {
     dispatch(getListing());
   }, [dispatch]);
 
+  const loaders = () => {
+    const loaders = [];
+    for (let i = 0; i < 22; i++) {
+      loaders.push(<Loader />);
+    }
+    return loaders;
+  };
+
   return (
     <>
       <Helmet>
@@ -31,14 +39,13 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
+
+      {loading && loaders()}
+
       <div className="card__list">
         {products.map((product: ProductType) => (
           <>
-            {loading || !products.length ? (
-              <Loader />
-            ) : (
-              <Card key={product.codeColor} {...product} />
-            )}
+            <Card key={product.codeColor} {...product} />
           </>
         ))}
       </div>
