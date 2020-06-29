@@ -10,5 +10,18 @@
   "bagTitle": "Sacola ({{count}})",
   "searchProduct": "Buscar por produto...",
   "notFoundPage": "A página que você está procurando foi renomeada, removida ou talvez nunca existiu.",
-  "notFoundButtonMessage": "Voltar para a Página Inicial"
+  "notFoundButtonMessage": "Voltar para a Página Inicial",
+  "about":"Sobre",
+  "brand":"Marca",
+  "press":"Imprensa",
+  "guidshop":"Guid Shop",
+  "help":"Ajuda",
+  "contactsus":"Atendimento",
+  "shipping":"Frete",
+  "returns":"Devolução",
+  "info":"Info",
+  "login":"Minha Conta",
+  "orders":"Pedidos",
+  "loyalty":"Créditos",
+  "rights":" ©2009-2020 Todos os Direitos Reservados"
 }
