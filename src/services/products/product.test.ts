@@ -27,7 +27,7 @@ describe("The parseProduct function", () => {
 
     mockedProduct.installments = "3x R$ 99,93";
     expect(parseProduct(mockedProduct).installments.price).toBe(9993);
-    expect(parseProduct(mockedProduct).installments.quantity).toBe(3);
+    expect(parseProduct(mockedProduct).installments.price).toBe(9993);
 
     mockedProduct.installments = "2x R$ 79,59";
     expect(parseProduct(mockedProduct).installments.price).toBe(7959);

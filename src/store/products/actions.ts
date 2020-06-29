@@ -36,11 +36,11 @@ export const getListing = (): AsyncProductThunkAction => async (
 };
 
 export const fetchProductBegun = (): ProductActionsTypes => ({
-  type: ProductAction.FETCH_LISTING_BEGUN,
+  type: ProductAction.FETCH_PRODUCT_BEGUN,
 });
 
 export const fetchProductFailed = (): ProductActionsTypes => ({
-  type: ProductAction.FETCH_LISTING_FAILED,
+  type: ProductAction.FETCH_PRODUCT_FAILED,
 });
 
 export const fetchProductSucceeced = (
@@ -63,7 +63,7 @@ export const getProduct = (id: string): AsyncProductThunkAction => async (
     if (!product) {
       throw new Error("NOT FOUND");
     }
-    fetchProductSucceeced(product, additionalColors || []);
+    dispatch(fetchProductSucceeced(product, additionalColors || []));
   } catch {
     dispatch(fetchProductFailed());
   }

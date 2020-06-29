@@ -1,40 +1,52 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import { LargeButton, SizeInfoButton } from "../../components/base/buttons";
-import { mockedProducts } from "../../services/products/__mocks__";
+import { getProduct } from "../../store/products/actions";
+import { addToCart } from "../../store/cart/actions";
+import { StoreState } from "../../store";
+import { ProductType } from "../../services/products/types";
 
-const product = mockedProducts[0];
 export const Product = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const { loading, product } = useSelector(
+    (state: StoreState) => state.products.currentProduct
+  );
 
   useEffect(() => {
-    console.warn("id :>> ", id);
-  }, [id]);
+    dispatch(getProduct(id));
+  }, [dispatch, id]);
 
-  if (!product) return <span>Loading</span>;
+  const addProductToCart = (product: ProductType) => {
+    dispatch(addToCart(product));
+  };
+
+  if (loading || !product) return <span>Loading</span>;
 
   return (
     <div className="singleProduct">
       <div className="singleProduct__photo">
         <img src={product.image} alt="" />
-        {product.discount_percentage && (
-          <span>-{product.discount_percentage}</span>
-        )}
+        {product.discountPercentage ? (
+          <span className="product__discount-badge">
+            -{product.discountPercentage}%
+          </span>
+        ) : null}
       </div>
       <div className="product__content">
         <h3 className="product__name">{product.name}</h3>
         <div className="product__pricing">
-          {product.on_sale && (
+          {product.onSale && (
             <span className="productPrice productPrice__from">
-              {product.regular_price}
+              {product.regularPrice}
             </span>
           )}
           <span className="productPrice productPrice__to">
-            {product.actual_price}
+            {product.actualPrice}
           </span>
           <span className="productPrice productPrice__installments">
-            em até {product.installments}
+            em até {product.installments.price}
           </span>
         </div>
         <div className="product__sizes">
@@ -52,7 +64,9 @@ export const Product = () => {
           )}
         </div>
         <div className="product__actions">
-          <LargeButton>Adicionar à Sacola</LargeButton>
+          <LargeButton onClick={() => addProductToCart(product)}>
+            Adicionar à Sacola
+          </LargeButton>
         </div>
       </div>
     </div>
