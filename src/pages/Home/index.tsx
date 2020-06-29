@@ -34,11 +34,7 @@ const Home = () => {
         <meta name="author" content={t("author")} />
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
-<<<<<<< HEAD
-      <SearchInput onSearchChange={() => {}} />
       Produtos - {products.length} items encontrados
-=======
->>>>>>> adding public image path
       <div className="card__list">
         {products.map((product: ProductType) => (
           <>
