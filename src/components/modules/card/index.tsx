@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ProductType } from "../../../services/products/types";
+import centsToCash from "../../../lib/format/centsToCash";
 
 export const Card = (product: ProductType) => {
   return (
@@ -18,14 +19,16 @@ export const Card = (product: ProductType) => {
       {product.onSale ? (
         <div className="card__price">
           <div className="card__actual-price--sale">
-            R$ {product.regularPrice}
+            {centsToCash(product.regularPrice)}
           </div>
           <div className="card__regular-price--sale">
-            R$ {product.actualPrice}
+            {centsToCash(product.actualPrice)}
           </div>
         </div>
       ) : (
-        <div className="card__regular-price">R$ {product.regularPrice}</div>
+        <div className="card__regular-price">
+          {centsToCash(product.regularPrice)}
+        </div>
       )}
     </div>
   );
