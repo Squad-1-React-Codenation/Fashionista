@@ -8,7 +8,6 @@ import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
 import { getListing } from "../../store/products/actions";
-import { Loader } from "../../components/modules/loader";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,6 +21,10 @@ const Home = () => {
     dispatch(getListing());
   }, [dispatch]);
 
+  if (loading || !products.length) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <Helmet>
@@ -34,11 +37,7 @@ const Home = () => {
       <div className="card__list">
         {products.map((product: ProductType) => (
           <>
-            {loading || !products.length ? (
-              <Loader />
-            ) : (
-              <Card key={product.codeColor} {...product} />
-            )}
+            <Card key={product.codeColor} {...product}></Card>
           </>
         ))}
       </div>
