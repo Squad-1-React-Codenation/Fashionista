@@ -68,4 +68,4 @@ yarn test
 <br /> 
 <a href="https://github.com/MarcelReis" target="_blank">:boy: Marcelo Reis</a>
 <br /> 
-<a href="https://github.com/paulacresende" target="_blank">:girl: Paula Resende</a>
+<a href="https://github.com/paulacresende" target="_blank">:girl: Paula Resende </a>
