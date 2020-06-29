@@ -1,55 +1,71 @@
+# undefined_ e-commerce
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2d01b3af-790d-475c-9db2-3ae79d05a6bf/deploy-status)](https://app.netlify.com/sites/undefined/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  <br>
+  <img src="https://github.com/Squad-1-React-Codenation/Fashionista/blob/master/public/img/logo.png" alt="undefined_logo" width="120">
+</h1>
 
-## Available Scripts
+<h4 align="center">Projeto prático do AceleraDev ReactJS proposto pela <a href="https://www.codenation.dev" target="_blank">Codenation</a> e apoiado pela <a href="https://br.ciandt.com/" target="_blank">CI&T</a>.</h4>
 
-In the project directory, you can run:
+## Objetivos
 
-### `yarn lint`
+Desenvolver as principais funcionalidades de um e-commerce :computer: de moda feminina :womans_clothes:, garantindo a melhor experiência possível para os usuários interagirem com os produtos :rocket:.
 
-This command executes the following commands, is recommended to run this commit before each commit.
+## Layout
 
-- `yarn eslint`
-- `yarn prettier`
-- `yarn stylelint`
-- `yarn tsc`
+O layout abaixo é da página principal, mas a aplicação também contém página do produto (<a href="https://codenation-challenges.s3-us-west-1.amazonaws.com/ecommerce/2.png" target="_blank">:point_right: aqui</a>), modal de filtro (<a href="https://codenation-challenges.s3-us-west-1.amazonaws.com/ecommerce/5.png" target="_blank">:point_right: aqui</a>) e sacola (<a href="https://codenation-challenges.s3-us-west-1.amazonaws.com/ecommerce/4.png" target="_blank">:point_right: aqui</a>).
 
-### `yarn start`
+<img src="https://codenation-challenges.s3-us-west-1.amazonaws.com/ecommerce/1.png" alt="">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Regras
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+:black_small_square: Deve implementar as funcionalidades apresentadas nos wireframes / layouts.
+<br /> 
+:black_small_square: Deve ser mobile first, possuindo uma experiência satisfatória tanto em mobile quanto em desktop.
+<br /> 
+:black_small_square: Deve consumir a API do catálogo de produtos.
+<br /> 
+:black_small_square: O estado global da aplicação deverá ser gerenciado com Redux.
+<br /> 
+:black_small_square: Deve ser um SPA (Single Page Application).
+<br /> 
+:black_small_square: Todos os produtos da API devem ser exibidos.
+<br /> 
+:black_small_square: Utilize BEM CSS para escrever os estilos.
+<br /> 
+:black_small_square: Deve-se fazer deploy do projeto, servindo-o no Netlify.
+<br /> 
+:black_small_square: Não utilize frameworks CSS como Bootstrap, Foundation e afins.
 
-### `yarn test`
+## Iniciando
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Instalação das dependências do projeto:
+```sh
+yarn install
+```
+### Iniciando o app:
+```sh
+yarn start
+```
+### Rodando os testes:
+```sh
+yarn test
+```
 
-### `yarn build`
+## Painel de tarefas
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a href="https://github.com/Squad-1-React-Codenation/Fashionista/projects/1" target="_blank">:clipboard: Dashboard</a>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Desenvolvedores
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a href="https://github.com/carloseloiprado" target="_blank">:boy: Carlos Elói Prado</a>
+<br /> 
+<a href="https://github.com/GenildaSilva" target="_blank">:girl: Genilda Silva</a>
+<br /> 
+<a href="https://github.com/herbertvpb" target="_blank">:boy: Herbert Vieira</a>
+<br /> 
+<a href="https://github.com/MarcelReis" target="_blank">:boy: Marcelo Reis</a>
+<br /> 
+<a href="https://github.com/paulacresende" target="_blank">:girl: Paula Resende</a>
