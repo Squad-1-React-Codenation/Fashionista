@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 
-import { ProductType } from "../../../services/products/types";
 import { Button } from "../../base/buttons";
+import centsToCash from "../../../lib/format/centsToCash";
+import { ProductCartType } from "../../../store/cart/types";
 
 type ModalCardPropsType = {
-  product: ProductType;
+  product: ProductCartType;
   isBag: boolean;
   onProductClick: () => void;
   onRemoveProduct: (productId: string) => void;
@@ -21,30 +22,35 @@ export const ModalCard = (props: ModalCardPropsType) => {
     >
       <div className="modal__card-product">
         <div className="modal__product-image">
-          <img src={props.product.image} alt="" />
+          <img src={props.product.product.image} alt="" />
           {props.isBag && (
-            <Button onClick={() => props.onRemoveProduct(props.product.style)}>
+            <Button
+              onClick={() => props.onRemoveProduct(props.product.product.style)}
+            >
               Remover
             </Button>
           )}
         </div>
         <div className="modal__product-info">
-          <span className="modal__product-name">{props.product.name}</span>
+          <span className="modal__product-name">
+            {props.product.product.name}
+          </span>
           {props.isBag && (
             <span className="modal__product-size">
-              {`Tam.: ${props.product.sizes[0].size}`}
+              {`Tam.: ${props.product.size.size}`}
             </span>
           )}
         </div>
       </div>
       <div className="modal__card-payment">
         <span className="modal__card-price">
-          {props.product.onSale
-            ? props.product.actualPrice
-            : props.product.regularPrice}
+          {props.product.product.onSale
+            ? centsToCash(props.product.product.actualPrice)
+            : centsToCash(props.product.product.regularPrice)}
         </span>
         <span className="modal__card-installments">
-          {props.product.installments.price}
+          {props.product.product.installments.quantity}x R${" "}
+          {centsToCash(props.product.product.installments.price)}
         </span>
       </div>
     </div>

@@ -1,25 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LargeButton, SizeInfoButton } from "../../components/base/buttons";
 import { getProduct } from "../../store/products/actions";
 import { addToCart } from "../../store/cart/actions";
 import { StoreState } from "../../store";
-import { ProductType } from "../../services/products/types";
+import {
+  ProductType,
+  ProductSizeResponseType,
+} from "../../services/products/types";
+import centsToCash from "../../lib/format/centsToCash";
+import { useTranslation } from "react-i18next";
+import { ProductCartType } from "../../store/cart/types";
 
 export const Product = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, product } = useSelector(
     (state: StoreState) => state.products.currentProduct
   );
+  const [showSizeEmpty, setShowSizeEmpty] = useState(false);
+
+  const [selectedSize, setSelectedSize] = useState({
+    available: false,
+    size: "",
+    sku: "",
+  });
 
   useEffect(() => {
     dispatch(getProduct(id));
   }, [dispatch, id]);
 
+  const handleSizeChange = (size: ProductSizeResponseType) => {
+    setSelectedSize(size);
+    setShowSizeEmpty(false);
+  };
+
   const addProductToCart = (product: ProductType) => {
-    dispatch(addToCart(product));
+    if (!selectedSize.size) {
+      setShowSizeEmpty(true);
+      return;
+    }
+
+    const newProduct: ProductCartType = {
+      product,
+      quantity: 1,
+      size: selectedSize,
+    };
+
+    dispatch(addToCart(newProduct));
   };
 
   if (loading || !product) return <span>Loading</span>;
@@ -39,33 +69,38 @@ export const Product = () => {
         <div className="product__pricing">
           {product.onSale && (
             <span className="productPrice productPrice__from">
-              {product.regularPrice}
+              {centsToCash(product.regularPrice)}
             </span>
           )}
           <span className="productPrice productPrice__to">
-            {product.actualPrice}
+            {centsToCash(product.actualPrice)}
           </span>
           <span className="productPrice productPrice__installments">
-            em até {product.installments.price}
+            em até {product.installments.quantity}x R${" "}
+            {centsToCash(product.installments.price)}
           </span>
         </div>
         <div className="product__sizes">
-          <p className="product__sizes-title">Escolha o tamanho</p>
+          <p className="product__sizes-title">{t("pickSize")}</p>
+          {showSizeEmpty && (
+            <p className="product__sizes-empty">{t("sizeEmpty")}</p>
+          )}
           {product.sizes.map(
             (size) =>
               size.available && (
                 <SizeInfoButton
                   key={size.sku}
                   modifier={size.size.length > 1 ? "large" : ""}
-                  value={size.sku}
+                  value={selectedSize.sku}
                   sizes={size.size}
+                  onChange={() => handleSizeChange(size)}
                 />
               )
           )}
         </div>
         <div className="product__actions">
           <LargeButton onClick={() => addProductToCart(product)}>
-            Adicionar à Sacola
+            {t("addToBag")}
           </LargeButton>
         </div>
       </div>

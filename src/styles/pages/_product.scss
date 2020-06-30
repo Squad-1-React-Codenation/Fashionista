@@ -14,7 +14,6 @@
   .singleProduct .product__content,
   .singleProduct .singleProduct__photo {
     width: 100%;
-    display: inline-block;
   }
 
   .singleProduct {
@@ -120,10 +119,16 @@
 }
 
 .product__discount-badge {
-  height: 18px;
+  height: 22px;
+  width: 40px;
   top: 0;
   right: 0;
   color: #fff;
   background-color: #000;
   padding: 0 var(--padding-5);
+}
+
+.product__sizes-empty {
+  color: var(--red);
+  font-size: var(--caption);
 }

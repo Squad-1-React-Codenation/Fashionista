@@ -5,7 +5,7 @@ import { Modal } from "../../base/modal";
 import { SearchInput } from "../../modules/searchInput";
 import { ModalCard } from "../../modules/modalCard";
 
-import { ProductType } from "../../../services/products/types";
+import { ProductCartType } from "../../../store/cart/types";
 
 type PropsType = {
   isOpen: boolean;
@@ -13,7 +13,7 @@ type PropsType = {
 };
 
 export const SearchModal = ({ isOpen, close }: PropsType) => {
-  const [products] = useState<ProductType[]>([]);
+  const [products] = useState<ProductCartType[]>([]);
 
   const { t } = useTranslation();
 
@@ -22,9 +22,9 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
       <SearchInput onSearchChange={() => false} />
       <div className="modal__search-list">
         {products.length ? (
-          products.map((product: ProductType) => (
+          products.map((product: ProductCartType) => (
             <ModalCard
-              key={product.name}
+              key={product.product.style}
               product={product}
               onProductClick={() => false}
               isBag={false}
@@ -32,9 +32,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
             ></ModalCard>
           ))
         ) : (
-          <div className="modal__empty-list">
-            Opss! Nenhum item foi encontrado :/
-          </div>
+          <div className="modal__empty-list">{t("noneItemHere")}</div>
         )}
       </div>
     </Modal>

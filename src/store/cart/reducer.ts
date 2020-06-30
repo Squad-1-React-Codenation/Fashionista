@@ -2,7 +2,7 @@ import { CartStateType, CartActionTypes, CartAction } from "./types";
 
 const initialState: CartStateType = {
   count: 0,
-  listing: [],
+  products: [],
 };
 
 const cartReducer = (
@@ -11,18 +11,18 @@ const cartReducer = (
 ): CartStateType => {
   switch (action.type) {
     case CartAction.ADD_TO_CART: {
-      const { listing } = state;
-      listing.push(action.product);
-      return { listing, count: listing.length };
+      const { products } = state;
+      products.push(action.product);
+      return { products, count: products.length };
     }
     case CartAction.REMOVE_FROM_CART: {
-      const listing = state.listing.filter(
-        (product) => product.style !== action.id
+      const products = state.products.filter(
+        (product) => product.product.style !== action.id
       );
-      return { listing, count: listing.length };
+      return { products, count: products.length };
     }
     case CartAction.CLEAR_CART: {
-      return { listing: [], count: 0 };
+      return { products: [], count: 0 };
     }
     default:
       return state;

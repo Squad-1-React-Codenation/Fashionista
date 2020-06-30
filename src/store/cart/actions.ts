@@ -1,7 +1,6 @@
-import { CartActionTypes, CartAction } from "./types";
-import { ProductType } from "../../services/products/types";
+import { CartActionTypes, CartAction, ProductCartType } from "./types";
 
-export const addToCart = (product: ProductType): CartActionTypes => ({
+export const addToCart = (product: ProductCartType): CartActionTypes => ({
   type: CartAction.ADD_TO_CART,
   product,
 });
