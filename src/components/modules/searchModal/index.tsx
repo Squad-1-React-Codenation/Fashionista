@@ -24,7 +24,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         {products.length ? (
           products.map((product: ProductCartType) => (
             <ModalCard
-              key={product.product.style}
+              key={product.details.style}
               product={product}
               onProductClick={() => false}
               isBag={false}

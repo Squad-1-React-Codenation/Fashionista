@@ -24,7 +24,7 @@ export interface ClearCartAction {
 }
 
 export type ProductCartType = {
-  product: ProductType;
+  details: ProductType;
   quantity: number;
   size: ProductSizeResponseType;
 };

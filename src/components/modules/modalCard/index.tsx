@@ -22,7 +22,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
     >
       <div className="modal__card-product">
         <div className="modal__product-image">
-          <img src={props.product.product.image} alt="" />
+          <img src={props.product.details.image} alt="" />
           {props.isBag && (
             <Button
               onClick={() => props.onRemoveProduct(props.product.size.sku)}
@@ -33,7 +33,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
         </div>
         <div className="modal__product-info">
           <span className="modal__product-name">
-            {props.product.product.name}
+            {props.product.details.name}
           </span>
           {props.isBag && (
             <span className="modal__product-size">
@@ -45,13 +45,13 @@ export const ModalCard = (props: ModalCardPropsType) => {
       </div>
       <div className="modal__card-payment">
         <span className="modal__card-price">
-          {props.product.product.onSale
-            ? centsToCash(props.product.product.actualPrice)
-            : centsToCash(props.product.product.regularPrice)}
+          {props.product.details.onSale
+            ? centsToCash(props.product.details.actualPrice)
+            : centsToCash(props.product.details.regularPrice)}
         </span>
         <span className="modal__card-installments">
-          {props.product.product.installments.quantity}x R${" "}
-          {centsToCash(props.product.product.installments.price)}
+          {props.product.details.installments.quantity}x R${" "}
+          {centsToCash(props.product.details.installments.price)}
         </span>
       </div>
     </div>

@@ -44,7 +44,7 @@ export const Product = () => {
     }
 
     const newProduct: ProductCartType = {
-      product,
+      details: product,
       quantity: 1,
       size: selectedSize,
     };

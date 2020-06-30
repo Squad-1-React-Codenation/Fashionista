@@ -15,7 +15,7 @@ const cartReducer = (
 
       const index = products.findIndex((product) => {
         return (
-          product.product.style === action.product.product.style &&
+          product.details.style === action.product.details.style &&
           product.size.size === action.product.size.size
         );
       });
