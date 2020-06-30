@@ -25,7 +25,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
           <img src={props.product.product.image} alt="" />
           {props.isBag && (
             <Button
-              onClick={() => props.onRemoveProduct(props.product.product.style)}
+              onClick={() => props.onRemoveProduct(props.product.size.sku)}
             >
               Remover
             </Button>
@@ -40,6 +40,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
               {`Tam.: ${props.product.size.size}`}
             </span>
           )}
+          <span className="modal__product-size">{props.product.quantity}</span>
         </div>
       </div>
       <div className="modal__card-payment">

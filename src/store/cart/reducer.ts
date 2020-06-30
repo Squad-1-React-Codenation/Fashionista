@@ -11,13 +11,25 @@ const cartReducer = (
 ): CartStateType => {
   switch (action.type) {
     case CartAction.ADD_TO_CART: {
-      const { products } = state;
-      products.push(action.product);
-      return { products, count: products.length };
+      const { products, count } = state;
+
+      const index = products.findIndex((product) => {
+        return (
+          product.product.style === action.product.product.style &&
+          product.size.size === action.product.size.size
+        );
+      });
+
+      if (index >= 0) products[index].quantity = products[index].quantity + 1;
+      else {
+        products.push(action.product);
+      }
+
+      return { products, count: count + 1 };
     }
     case CartAction.REMOVE_FROM_CART: {
       const products = state.products.filter(
-        (product) => product.product.style !== action.id
+        (product) => product.size.sku !== action.id
       );
       return { products, count: products.length };
     }
