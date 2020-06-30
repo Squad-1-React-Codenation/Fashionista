@@ -1,9 +1,11 @@
 [build]
   base = "/"
   publish = "build/"
-  command = "yarn run lint:netlify && yarn run test && yarn run build"
-  functions = "src/functions/"
+  command = "make build"
+  functions = "functions/"
   ignore = "git diff --quiet HEAD^ HEAD src/"
+[build.environment]
+  GO_IMPORT_PATH = "github.com/Squad-1-React-Codenation/Fashionista"
 
 [[redirects]]
   from = "/*"
