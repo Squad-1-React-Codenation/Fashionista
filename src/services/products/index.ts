@@ -1,11 +1,11 @@
 import { ProductResponseType, ProductType } from "./types";
 
-// const CODENATION_API = "https://5e9935925eabe7001681c856.mockapi.io/api/v1";
-const UNDEFINED_URL = "https://undefined.netlify.app/";
+const UNDEFINED_URL = "https://undefined.netlify.app";
+
 const UNDEFINED_API = `${
-  window.location.host === "localhost:300"
-    ? window.location.origin
-    : UNDEFINED_URL
+  window.location.host === "localhost:3000"
+    ? UNDEFINED_URL
+    : window.location.origin
 }/api/catalog`;
 
 const removeNonDigits = (value: string): string => value.replace(/\D/g, "");

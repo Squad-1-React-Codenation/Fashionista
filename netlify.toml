@@ -8,13 +8,13 @@
   GO_IMPORT_PATH = "github.com/Squad-1-React-Codenation/Fashionista"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
 
 [[redirects]]
-  from = "/.netlify/functions/*"
-  to = "/api/:splat"
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [[headers]]
