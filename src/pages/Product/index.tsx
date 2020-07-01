@@ -27,10 +27,7 @@ export const Product = () => {
   return (
     <div className="singleProduct">
       <div className="singleProduct__photo">
-        <img
-          src={product.image ? product.image : "img/image-not-found.png"}
-          alt=""
-        />
+        <img src={product.image} alt="" />
         {product.discountPercentage ? (
           <span className="product__discount-badge">
             -{product.discountPercentage}%

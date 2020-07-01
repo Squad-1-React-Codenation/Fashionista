@@ -21,14 +21,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
     >
       <div className="modal__card-product">
         <div className="modal__product-image">
-          <img
-            src={
-              props.product.image
-                ? props.product.image
-                : "img/image-not-found.png"
-            }
-            alt=""
-          />
+          <img src={props.product.image} alt="" />
           {props.isBag && (
             <Button onClick={() => props.onRemoveProduct(props.product.style)}>
               Remover

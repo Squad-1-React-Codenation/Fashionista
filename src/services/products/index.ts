@@ -19,6 +19,7 @@ export const parseProduct = (product: ProductResponseType): ProductType => {
     regularPrice: +removeNonDigits(product.regular_price),
     actualPrice: +removeNonDigits(product.actual_price),
     discountPercentage: +removeNonDigits(product.discount_percentage),
+    image: product.image ? product.image : "/img/image-not-found.png",
     installments: {
       quantity: +unparsedInstallment[0],
       price: +removeNonDigits(unparsedInstallment[1]),
