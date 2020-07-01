@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { StoreState } from "../../../store";
 import { removeFromCart } from "../../../store/cart/actions";
-import { ProductType } from "../../../services/products/types";
+import { ProductCartType } from "../../../store/cart/types";
 
 type PropsType = {
   isOpen: boolean;
@@ -15,7 +15,7 @@ type PropsType = {
 
 export const BagModal = ({ isOpen, close }: PropsType) => {
   const dispatch = useDispatch();
-  const { count, listing } = useSelector((state: StoreState) => state.cart);
+  const { count, products } = useSelector((state: StoreState) => state.cart);
 
   const removeProduct = (productId: string) => {
     dispatch(removeFromCart(productId));
@@ -26,10 +26,10 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
   return (
     <Modal title={t("bagTitle", { count })} isOpen={isOpen} close={close}>
       <div className="modal__search-list">
-        {listing.length ? (
-          listing.map((product: ProductType) => (
+        {products.length ? (
+          products.map((product: ProductCartType) => (
             <ModalCard
-              key={product.name}
+              key={product.details.style}
               product={product}
               onProductClick={() => false}
               onRemoveProduct={removeProduct}
@@ -37,7 +37,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
             />
           ))
         ) : (
-          <div className="modal__empty-list">Opss! Aqui não tem nada :/</div>
+          <div className="modal__empty-list">{t("nothingHere")}</div>
         )}
       </div>
     </Modal>

@@ -1,4 +1,7 @@
-import { ProductType } from "../../services/products/types";
+import {
+  ProductType,
+  ProductSizeResponseType,
+} from "../../services/products/types";
 
 export enum CartAction {
   ADD_TO_CART = "ADD_TO_CART",
@@ -8,7 +11,7 @@ export enum CartAction {
 
 export interface AddToCartAction {
   type: CartAction.ADD_TO_CART;
-  product: ProductType;
+  product: ProductCartType;
 }
 
 export interface RemoveFromCartAction {
@@ -20,9 +23,15 @@ export interface ClearCartAction {
   type: CartAction.CLEAR_CART;
 }
 
+export type ProductCartType = {
+  details: ProductType;
+  quantity: number;
+  size: ProductSizeResponseType;
+};
+
 export type CartStateType = {
   count: number;
-  listing: ProductType[];
+  products: ProductCartType[];
 };
 
 export type CartActionTypes =

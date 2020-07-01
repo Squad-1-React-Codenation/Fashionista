@@ -31,6 +31,7 @@ export const SizeInfoButton = (props: ButtonPropsType) => {
         type="radio"
         name="radio-size"
         value={props.value}
+        onChange={props.onChange}
       />
       <span className={`checkmark checkmark--${props.modifier}`}>
         {props.sizes}

@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 
-import { ProductType } from "../../../services/products/types";
 import { Button } from "../../base/buttons";
+import centsToCash from "../../../lib/format/centsToCash";
+import { ProductCartType } from "../../../store/cart/types";
 
 type ModalCardPropsType = {
-  product: ProductType;
+  product: ProductCartType;
   isBag: boolean;
   onProductClick: () => void;
   onRemoveProduct: (productId: string) => void;
@@ -21,30 +22,36 @@ export const ModalCard = (props: ModalCardPropsType) => {
     >
       <div className="modal__card-product">
         <div className="modal__product-image">
-          <img src={props.product.image} alt="" />
+          <img src={props.product.details.image} alt="" />
           {props.isBag && (
-            <Button onClick={() => props.onRemoveProduct(props.product.style)}>
+            <Button
+              onClick={() => props.onRemoveProduct(props.product.size.sku)}
+            >
               Remover
             </Button>
           )}
         </div>
         <div className="modal__product-info">
-          <span className="modal__product-name">{props.product.name}</span>
+          <span className="modal__product-name">
+            {props.product.details.name}
+          </span>
           {props.isBag && (
             <span className="modal__product-size">
-              {`Tam.: ${props.product.sizes[0].size}`}
+              {`Tam.: ${props.product.size.size}`}
             </span>
           )}
+          <span className="modal__product-size">{props.product.quantity}</span>
         </div>
       </div>
       <div className="modal__card-payment">
         <span className="modal__card-price">
-          {props.product.onSale
-            ? props.product.actualPrice
-            : props.product.regularPrice}
+          {props.product.details.onSale
+            ? centsToCash(props.product.details.actualPrice)
+            : centsToCash(props.product.details.regularPrice)}
         </span>
         <span className="modal__card-installments">
-          {props.product.installments.price}
+          {props.product.details.installments.quantity}x R${" "}
+          {centsToCash(props.product.details.installments.price)}
         </span>
       </div>
     </div>
