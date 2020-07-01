@@ -1,6 +1,7 @@
 import { ProductResponseType, ProductType } from "./types";
 
-const CODENATION_API = "https://5e9935925eabe7001681c856.mockapi.io/api/v1";
+// const CODENATION_API = "https://5e9935925eabe7001681c856.mockapi.io/api/v1";
+const UNDEFINED_API = `${location.origin}/.netlify/functions/catalog`;
 
 const removeNonDigits = (value: string): string => value.replace(/\D/g, "");
 export const parseProduct = (product: ProductResponseType): ProductType => {
@@ -24,7 +25,7 @@ export default class ProductAPI {
   private baseURL: string;
 
   constructor() {
-    this.baseURL = CODENATION_API;
+    this.baseURL = UNDEFINED_API;
   }
 
   public async getCatalog(): Promise<ProductType[]> {
