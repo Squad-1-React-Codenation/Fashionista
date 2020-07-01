@@ -6,7 +6,7 @@ const UNDEFINED_API = `${
   window.location.host === "localhost:3000"
     ? UNDEFINED_URL
     : window.location.origin
-}/api/catalog`;
+}/api`;
 
 const removeNonDigits = (value: string): string => value.replace(/\D/g, "");
 export const parseProduct = (product: ProductResponseType): ProductType => {
