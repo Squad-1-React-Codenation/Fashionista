@@ -17,9 +17,15 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		}, nil
 	}
 
+	headers := map[string]string{
+		"content-type":                "application/json; charset=utf-8",
+		"cache-control":               "public, max-age=3600",
+		"access-control-allow-origin": "*"}
+
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
 		Body:       string(res),
+		Headers:    headers,
 	}, nil
 }
 
