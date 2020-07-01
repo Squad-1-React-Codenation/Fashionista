@@ -1,6 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Loader = (props: any) => (
   <ContentLoader
     className="home_loader"

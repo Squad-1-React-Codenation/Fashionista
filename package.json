@@ -25,7 +25,6 @@
     "test:watch": "yarn test --watch",
     "eject": "react-scripts eject",
     "lint": "yarn run eslint && yarn run stylelint && yarn run prettier && yarn run tsc",
-    "lint:netlify": "yarn run stylelint & yarn run prettier & yarn run tsc",
     "eslint": "eslint \"src/**/*.ts\"; eslint \"src/**/*.tsx\"",
     "stylelint": "stylelint \"src/**/*.(scss)\"",
     "prettier": "prettier --check \"src/**/*.(ts|tsx|scss)\"",
