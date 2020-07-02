@@ -16,10 +16,7 @@ export const Card = ({ product, onClick }: PropsType) => {
       role="button"
       tabIndex={0}
     >
-      <img
-        src={product.image ? product.image : "img/image-not-found.png"}
-        alt=""
-      />
+      <img src={product.image} alt="" />
       {product.onSale && (
         <div className="card__discount-badge">
           <span>{product.discountPercentage}%</span>
