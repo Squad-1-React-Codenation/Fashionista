@@ -11,6 +11,8 @@ type ModalCardPropsType = {
   isBag: boolean;
   onProductClick: () => void;
   onRemoveProduct: (product: ProductCartType) => void;
+  onIncreaseQuantity: (product: ProductCartType) => void;
+  onDecreaseQuantity: (product: ProductCartType) => void;
 };
 
 export const ModalCard = (props: ModalCardPropsType) => {
@@ -39,11 +41,15 @@ export const ModalCard = (props: ModalCardPropsType) => {
                 {`Tam.: ${props.product.size.size}`}
               </span>
               <div className="modal__quantity-controls">
-                <SquareSharpButton>
+                <SquareSharpButton
+                  onClick={() => props.onDecreaseQuantity(props.product)}
+                >
                   <MinusIcon />
                 </SquareSharpButton>
                 <span>{props.product.quantity}</span>
-                <SquareSharpButton>
+                <SquareSharpButton
+                  onClick={() => props.onIncreaseQuantity(props.product)}
+                >
                   <PlusIcon />
                 </SquareSharpButton>
               </div>

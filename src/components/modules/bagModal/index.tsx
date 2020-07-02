@@ -5,7 +5,11 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
 import { StoreState } from "../../../store";
-import { removeFromCart } from "../../../store/cart/actions";
+import {
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../../../store/cart/actions";
 import { ProductCartType } from "../../../store/cart/types";
 
 type PropsType = {
@@ -21,6 +25,14 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
     dispatch(removeFromCart(product));
   };
 
+  const increaseProductQuantity = (product: ProductCartType) => {
+    dispatch(increaseQuantity(product));
+  };
+
+  const decreaseProductQuantity = (product: ProductCartType) => {
+    dispatch(decreaseQuantity(product));
+  };
+
   const { t } = useTranslation();
 
   return (
@@ -33,6 +45,8 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
               product={product}
               onProductClick={() => false}
               onRemoveProduct={removeProduct}
+              onIncreaseQuantity={increaseProductQuantity}
+              onDecreaseQuantity={decreaseProductQuantity}
               isBag
             />
           ))
