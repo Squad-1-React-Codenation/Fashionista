@@ -88,11 +88,16 @@
 }
 
 .modal__card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--gray-5);
+}
+
+.modal__card-content {
   width: 100%;
   display: flex;
   height: auto;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--gray-5);
+  padding: var(--padding-2) 0;
 }
 
 .modal__card--is-search {
@@ -101,34 +106,60 @@
 
 .modal__card-product {
   display: flex;
-  padding: var(--padding-2) 0;
+  width: 200px;
 }
 
 .modal__product-image {
-  display: flex;
-  flex-direction: column;
+  width: 30%;
 }
 
 .modal__card-product img {
-  width: 25%;
+  width: 100%;
+}
+
+.modal__card-remove {
+  width: 30%;
+  padding: var(--padding-1) 0;
+}
+
+.modal__card-remove button {
+  color: var(--red);
+  font-size: var(--caption);
+  background: none;
 }
 
 .modal__product-info {
   display: flex;
   flex-direction: column;
+  width: 50%;
+  margin-left: var(--margin-3);
 }
 
 .modal__product-name {
-  padding: 0 var(--padding-2);
+  padding: var(--padding-3);
   font-size: var(--heading-3);
   font-weight: bold;
 }
 
+.modal__product-size {
+  font-size: var(--caption);
+  color: var(--gray-4);
+  padding: var(--padding-3);
+}
+
+.modal__quantity-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 64px;
+  padding: var(--padding-3);
+}
+
 .modal__card-payment {
   display: flex;
+  width: 30%;
   flex-direction: column;
   align-items: flex-end;
-  padding: var(--padding-2) 0;
+  padding: var(--padding-3) 0;
 }
 
 .modal__card-price {
