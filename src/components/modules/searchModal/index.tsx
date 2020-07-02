@@ -29,6 +29,8 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
               onProductClick={() => false}
               isBag={false}
               onRemoveProduct={() => false}
+              onIncreaseQuantity={() => false}
+              onDecreaseQuantity={() => false}
             ></ModalCard>
           ))
         ) : (
