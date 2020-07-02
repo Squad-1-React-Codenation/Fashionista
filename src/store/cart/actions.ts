@@ -5,9 +5,9 @@ export const addToCart = (product: ProductCartType): CartActionTypes => ({
   product,
 });
 
-export const removeFromCart = (id: string): CartActionTypes => ({
+export const removeFromCart = (product: ProductCartType): CartActionTypes => ({
   type: CartAction.REMOVE_FROM_CART,
-  id,
+  product,
 });
 
 export const clearCart = (): CartActionTypes => ({

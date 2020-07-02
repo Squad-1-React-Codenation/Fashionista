@@ -17,8 +17,8 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
   const dispatch = useDispatch();
   const { count, products } = useSelector((state: StoreState) => state.cart);
 
-  const removeProduct = (productId: string) => {
-    dispatch(removeFromCart(productId));
+  const removeProduct = (product: ProductCartType) => {
+    dispatch(removeFromCart(product));
   };
 
   const { t } = useTranslation();

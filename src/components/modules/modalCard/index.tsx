@@ -10,7 +10,7 @@ type ModalCardPropsType = {
   product: ProductCartType;
   isBag: boolean;
   onProductClick: () => void;
-  onRemoveProduct: (productId: string) => void;
+  onRemoveProduct: (product: ProductCartType) => void;
 };
 
 export const ModalCard = (props: ModalCardPropsType) => {
@@ -65,7 +65,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
       </div>
       {props.isBag && (
         <div className="modal__card-remove">
-          <Button onClick={() => props.onRemoveProduct(props.product.size.sku)}>
+          <Button onClick={() => props.onRemoveProduct(props.product)}>
             Remover item
           </Button>
         </div>

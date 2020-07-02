@@ -16,7 +16,7 @@ export interface AddToCartAction {
 
 export interface RemoveFromCartAction {
   type: CartAction.REMOVE_FROM_CART;
-  id: string;
+  product: ProductCartType;
 }
 
 export interface ClearCartAction {

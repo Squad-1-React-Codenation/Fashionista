@@ -29,9 +29,9 @@ const cartReducer = (
     }
     case CartAction.REMOVE_FROM_CART: {
       const products = state.products.filter(
-        (product) => product.size.sku !== action.id
+        (product) => product.size.sku !== action.product.size.sku
       );
-      return { products, count: products.length };
+      return { products, count: state.count - action.product.quantity };
     }
     case CartAction.CLEAR_CART: {
       return { products: [], count: 0 };
