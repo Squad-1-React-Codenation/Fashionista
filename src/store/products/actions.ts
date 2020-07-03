@@ -1,9 +1,6 @@
-import {
-  ProductAction,
-  ProductActionsTypes,
-  AsyncProductThunkAction,
-} from "./types";
+import { ProductAction, ProductActionsTypes } from "./types";
 import { ProductType } from "../../services/products/types";
+import { AsyncThunkAction } from "..";
 
 export const fetchListingBegun = (): ProductActionsTypes => ({
   type: ProductAction.FETCH_LISTING_BEGUN,
@@ -20,7 +17,7 @@ export const fetchListingSucceed = (
   products,
 });
 
-export const getListing = (): AsyncProductThunkAction => async (
+export const getListing = (): AsyncThunkAction => async (
   dispatch,
   _,
   { productsAPI }
@@ -50,9 +47,7 @@ export const fetchSearchingFailed = (): ProductActionsTypes => ({
   type: ProductAction.FETCH_SEARCHING_FAILED,
 });
 
-export const getSearchProduct = (
-  search: string
-): AsyncProductThunkAction => async (
+export const getSearchProduct = (search: string): AsyncThunkAction => async (
   dispatch,
   _,
   { productsAPI }
@@ -86,7 +81,7 @@ export const fetchProductSucceeced = (
   additionalColors,
 });
 
-export const getProduct = (id: string): AsyncProductThunkAction => async (
+export const getProduct = (id: string): AsyncThunkAction => async (
   dispatch,
   _,
   { productsAPI }

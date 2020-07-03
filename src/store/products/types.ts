@@ -1,10 +1,7 @@
-import { ThunkAction } from "redux-thunk";
-
 import {
   ProductType,
   ProductSizeResponseType,
 } from "../../services/products/types";
-import { ThunkExtraArguments } from "..";
 
 export enum ProductAction {
   FETCH_LISTING_BEGUN = "FETCH_LISTING_BEGUN",
@@ -59,13 +56,6 @@ export interface FetchProductSucceededAction {
   product: ProductType;
   additionalColors: ProductType[];
 }
-
-export type AsyncProductThunkAction = ThunkAction<
-  Promise<void>,
-  ProductStateType,
-  ThunkExtraArguments,
-  ProductActionsTypes
->;
 
 export type ProductStateType = {
   listing: {
