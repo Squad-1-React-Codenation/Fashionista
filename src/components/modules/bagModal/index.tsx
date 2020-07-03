@@ -11,6 +11,7 @@ import {
   decreaseQuantity,
 } from "../../../store/cart/actions";
 import { ProductCartType } from "../../../store/cart/types";
+import centsToCash from "../../../lib/format/centsToCash";
 
 type PropsType = {
   isOpen: boolean;
@@ -19,7 +20,9 @@ type PropsType = {
 
 export const BagModal = ({ isOpen, close }: PropsType) => {
   const dispatch = useDispatch();
-  const { count, products } = useSelector((state: StoreState) => state.cart);
+  const { count, products, value } = useSelector(
+    (state: StoreState) => state.cart
+  );
 
   const removeProduct = (product: ProductCartType) => {
     dispatch(removeFromCart(product));
@@ -55,6 +58,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
           <div className="modal__empty-list">{t("nothingHere")}</div>
         )}
       </div>
+      <div>{centsToCash(value)}</div>
     </Modal>
   );
 };
