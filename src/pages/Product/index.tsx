@@ -12,6 +12,7 @@ import {
 import centsToCash from "../../lib/format/centsToCash";
 import { useTranslation } from "react-i18next";
 import { ProductCartType } from "../../store/cart/types";
+import { LoaderProduct } from "../../components/modules/loader";
 
 export const Product = () => {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export const Product = () => {
     dispatch(addToCart(newProduct));
   };
 
-  if (loading || !product) return <span>Loading</span>;
+  if (loading || !product) return <LoaderProduct />;
 
   return (
     <div className="singleProduct">

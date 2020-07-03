@@ -9,7 +9,7 @@ import { StoreState } from "../../store";
 
 import { Card } from "../../components/modules/card";
 import { getListing } from "../../store/products/actions";
-import { Loader } from "../../components/modules/loader";
+import { LoaderCard } from "../../components/modules/loader";
 
 const Home = () => {
   const history = useHistory();
@@ -27,7 +27,7 @@ const Home = () => {
   const loaders = () => {
     const loaders = [];
     for (let i = 0; i < 22; i++) {
-      loaders.push(<Loader />);
+      loaders.push(<LoaderCard />);
     }
     return loaders;
   };
@@ -42,7 +42,7 @@ const Home = () => {
         <meta name="keywords" content={t("keywords")} />
       </Helmet>
 
-      {loading && loaders()}
+      {(loading || !products.length) && loaders()}
 
       <div className="card__list">
         {products.map((product: ProductType) => (
