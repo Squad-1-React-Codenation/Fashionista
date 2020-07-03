@@ -44,6 +44,7 @@ export type ProductCartType = {
 export type CartStateType = {
   count: number;
   products: ProductCartType[];
+  value: number;
 };
 
 export type CartActionTypes =

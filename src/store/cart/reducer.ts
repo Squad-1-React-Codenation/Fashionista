@@ -1,9 +1,25 @@
-import { CartStateType, CartActionTypes, CartAction } from "./types";
+import {
+  CartStateType,
+  CartActionTypes,
+  CartAction,
+  ProductCartType,
+} from "./types";
 
 const initialState: CartStateType = {
   count: 0,
+  value: 0,
   products: [],
 };
+
+const findProduct = (
+  searchedProduct: ProductCartType,
+  products: ProductCartType[]
+): ProductCartType | undefined =>
+  products.find(
+    (product) =>
+      product.details.codeColor === searchedProduct.details.codeColor &&
+      product.size.size === searchedProduct.size.size
+  );
 
 const cartReducer = (
   state = initialState,
@@ -11,63 +27,74 @@ const cartReducer = (
 ): CartStateType => {
   switch (action.type) {
     case CartAction.ADD_TO_CART: {
-      const { products, count } = state;
+      const { products, count, value } = { ...state };
 
-      const index = products.findIndex((product) => {
-        return (
-          product.details.style === action.product.details.style &&
-          product.size.size === action.product.size.size
-        );
-      });
+      const product = findProduct(action.product, products);
 
-      if (index >= 0) products[index].quantity = products[index].quantity + 1;
-      else {
-        products.push(action.product);
-      }
+      product
+        ? (product.quantity = product.quantity + 1)
+        : products.push(action.product);
 
-      return { products, count: count + 1 };
+      return {
+        products,
+        count: count + 1,
+        value: value + action.product.details.actualPrice,
+      };
     }
     case CartAction.INCREASE_QUANTITY: {
-      const { products, count } = state;
+      const { products, count, value } = { ...state };
 
-      const index = products.findIndex((product) => {
-        return (
-          product.details.style === action.product.details.style &&
-          product.size.size === action.product.size.size
-        );
-      });
-
-      products[index].quantity = products[index].quantity + 1;
-
-      return { products, count: count + 1 };
-    }
-    case CartAction.DECREASE_QUANTITY: {
-      const { products, count } = state;
-
-      const index = products.findIndex((product) => {
-        return (
-          product.details.style === action.product.details.style &&
-          product.size.size === action.product.size.size
-        );
-      });
-
-      const newQuantity = products[index].quantity - 1;
-
-      if (newQuantity) products[index].quantity = newQuantity;
-      else {
-        products.splice(index, 1);
+      const product = findProduct(action.product, products);
+      if (!product) {
+        return { ...state };
       }
 
-      return { products, count: count - 1 };
+      product.quantity = product.quantity + 1;
+
+      return {
+        products,
+        count: count + 1,
+        value: value + action.product.details.actualPrice,
+      };
+    }
+    case CartAction.DECREASE_QUANTITY: {
+      const { products, count, value } = { ...state };
+
+      const product = findProduct(action.product, products);
+      if (!product) {
+        return state;
+      }
+
+      const newQuantity = product.quantity - 1;
+
+      newQuantity < 1
+        ? (product.quantity = newQuantity)
+        : products.splice(products.indexOf(product), 1);
+
+      return {
+        products,
+        count: count - 1,
+        value: value - product.details.actualPrice,
+      };
     }
     case CartAction.REMOVE_FROM_CART: {
-      const products = state.products.filter(
-        (product) => product.size.sku !== action.product.size.sku
-      );
-      return { products, count: state.count - action.product.quantity };
+      const { products, count, value } = { ...state };
+
+      const product = findProduct(action.product, state.products);
+      if (!product) {
+        return state;
+      }
+
+      products.splice(products.indexOf(product), 1);
+
+      return {
+        products,
+        count: count - product.quantity,
+        value: value - product.quantity * product.details.actualPrice,
+      };
     }
     case CartAction.CLEAR_CART: {
-      return { products: [], count: 0 };
+      return { ...initialState };
     }
     default:
       return state;
