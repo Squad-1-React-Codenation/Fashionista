@@ -11,15 +11,31 @@ const rootReducer = combineReducers({
   cart: cartReducer,
 });
 
+function getPreloadedState(): StoreState {
+  const rawState = localStorage.getItem("redux");
+  return rawState ? JSON.parse(rawState) : {};
+}
+
 const thunkExtraArguments = { productsAPI: new ProductsAPI() };
 export type ThunkExtraArguments = typeof thunkExtraArguments;
 
 const store = createStore(
   rootReducer,
+  getPreloadedState(),
   composeWithDevTools(
     applyMiddleware(thunk.withExtraArgument(thunkExtraArguments))
   )
 );
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let debounceTimer: any;
+store.subscribe(() => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(
+    () => localStorage.setItem("redux", JSON.stringify(store.getState())),
+    window.location.hostname === "localhost" ? 100 : 1000
+  );
+});
 
 export type StoreState = ReturnType<typeof rootReducer>;
 
