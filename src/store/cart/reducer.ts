@@ -67,7 +67,7 @@ const cartReducer = (
 
       const newQuantity = product.quantity - 1;
 
-      newQuantity < 1
+      newQuantity > 0
         ? (product.quantity = newQuantity)
         : products.splice(products.indexOf(product), 1);
 
