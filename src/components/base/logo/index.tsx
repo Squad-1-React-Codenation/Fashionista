@@ -7,7 +7,7 @@ type PropType = {
 
 export const Logo = ({ height, width }: PropType) => {
   return (
-    <a  href ="/">
+    <a href ="/">
       <img src="img/logo.png" alt="Undefined" height={height} width={width} />
     </a>
     
