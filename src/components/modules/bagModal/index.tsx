@@ -41,12 +41,13 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
         {products.length ? (
           products.map((product: ProductCartType) => (
             <ModalCard
-              key={product.details.style}
-              product={product}
-              onProductClick={() => false}
-              onRemoveProduct={removeProduct}
-              onIncreaseQuantity={increaseProductQuantity}
-              onDecreaseQuantity={decreaseProductQuantity}
+              key={product.details.codeColor}
+              product={product.details}
+              quantity={product.quantity}
+              size={product.size.size}
+              onRemoveProduct={() => removeProduct(product)}
+              onIncreaseQuantity={() => increaseProductQuantity(product)}
+              onDecreaseQuantity={() => decreaseProductQuantity(product)}
               isBag
             />
           ))

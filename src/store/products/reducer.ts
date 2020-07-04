@@ -12,6 +12,11 @@ const initialState: ProductStateType = {
     product: null,
     additionalColors: [],
   },
+  searchingProduct: {
+    loading: false,
+    error: null,
+    products: [],
+  },
 };
 
 const productReducer = (
@@ -43,6 +48,36 @@ const productReducer = (
       return {
         ...state,
         listing: {
+          loading: false,
+          error: false,
+          products: action.products,
+        },
+      };
+    }
+    case ProductAction.FETCH_SEARCHING_BEGUN: {
+      return {
+        ...state,
+        searchingProduct: {
+          loading: true,
+          error: null,
+          products: [],
+        },
+      };
+    }
+    case ProductAction.FETCH_SEARCHING_FAILED: {
+      return {
+        ...state,
+        searchingProduct: {
+          loading: false,
+          error: true,
+          products: [],
+        },
+      };
+    }
+    case ProductAction.FETCH_SEARCHING_SUCCEEDED: {
+      return {
+        ...state,
+        searchingProduct: {
           loading: false,
           error: false,
           products: action.products,

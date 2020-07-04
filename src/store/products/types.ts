@@ -1,12 +1,19 @@
 import { ThunkAction } from "redux-thunk";
 
-import { ProductType } from "../../services/products/types";
+import {
+  ProductType,
+  ProductSizeResponseType,
+} from "../../services/products/types";
 import { ThunkExtraArguments } from "..";
 
 export enum ProductAction {
   FETCH_LISTING_BEGUN = "FETCH_LISTING_BEGUN",
   FETCH_LISTING_FAILED = "FETCH_LISTING_FAILED",
   FETCH_LISTING_SUCCEEDED = "FETCH_LISTING_SUCCEEDED",
+
+  FETCH_SEARCHING_BEGUN = "FETCH_SEARCHING_BEGUN",
+  FETCH_SEARCHING_FAILED = "FETCH_SEARCHING_FAILED",
+  FETCH_SEARCHING_SUCCEEDED = "FETCH_SEARCHING_SUCCEEDED",
 
   FETCH_PRODUCT_BEGUN = "FETCH_PRODUCT_BEGUN",
   FETCH_PRODUCT_FAILED = "FETCH_PRODUCT_FAIL",
@@ -23,6 +30,19 @@ export interface FetchListingFailedAction {
 
 export interface FetchListingSucceededAction {
   type: ProductAction.FETCH_LISTING_SUCCEEDED;
+  products: ProductType[];
+}
+
+export interface FetchSearchingBegunAction {
+  type: ProductAction.FETCH_SEARCHING_BEGUN;
+}
+
+export interface FetchSearchingFailedAction {
+  type: ProductAction.FETCH_SEARCHING_FAILED;
+}
+
+export interface FetchSearchingSucceededAction {
+  type: ProductAction.FETCH_SEARCHING_SUCCEEDED;
   products: ProductType[];
 }
 
@@ -59,6 +79,17 @@ export type ProductStateType = {
     product: ProductType | null;
     additionalColors: ProductType[];
   };
+  searchingProduct: {
+    loading: boolean;
+    error: boolean | null;
+    products: ProductType[];
+  };
+};
+
+export type ProductSearchType = {
+  details: ProductType;
+  quantity: number;
+  size: ProductSizeResponseType;
 };
 
 export type ProductActionsTypes =
@@ -67,4 +98,7 @@ export type ProductActionsTypes =
   | FetchProductSucceededAction
   | FetchListingBegunAction
   | FetchListingFailedAction
-  | FetchListingSucceededAction;
+  | FetchListingSucceededAction
+  | FetchSearchingBegunAction
+  | FetchSearchingFailedAction
+  | FetchSearchingSucceededAction;

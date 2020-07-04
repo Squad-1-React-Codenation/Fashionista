@@ -35,6 +35,40 @@ export const getListing = (): AsyncProductThunkAction => async (
   }
 };
 
+export const fetchSearchingSucceed = (
+  products: ProductType[]
+): ProductActionsTypes => ({
+  type: ProductAction.FETCH_SEARCHING_SUCCEEDED,
+  products,
+});
+
+export const fetchSearchingBegun = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_SEARCHING_BEGUN,
+});
+
+export const fetchSearchingFailed = (): ProductActionsTypes => ({
+  type: ProductAction.FETCH_SEARCHING_FAILED,
+});
+
+export const getSearchProduct = (
+  search: string
+): AsyncProductThunkAction => async (
+  dispatch,
+  _,
+  { productsAPI }
+): Promise<void> => {
+  dispatch(fetchSearchingBegun());
+
+  try {
+    const products = await productsAPI.searchProduct(search);
+    // eslint-disable-next-line no-console
+    console.log({ products });
+    dispatch(fetchSearchingSucceed(products));
+  } catch (error) {
+    dispatch(fetchSearchingFailed());
+  }
+};
+
 export const fetchProductBegun = (): ProductActionsTypes => ({
   type: ProductAction.FETCH_PRODUCT_BEGUN,
 });
