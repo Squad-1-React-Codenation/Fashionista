@@ -58,7 +58,7 @@ export default class ProductAPI {
       .filter((product) => product.style.includes(id));
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    products.sort((pa, _) => (pa.codeColor === style ? 0 : 1));
+    products.sort((pa, _) => (pa.codeColor === style ? -1 : 1));
 
     return {
       product: products[0],
