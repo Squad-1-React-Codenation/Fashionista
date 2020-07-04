@@ -14,7 +14,7 @@ type PropsType = {
 
 export const Modal = ({ title, children, isOpen, close }: PropsType) => {
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    document.body.style.overflow = isOpen ? "hidden" : "inherit";
   }, [isOpen]);
 
   return ReactDOM.createPortal(
