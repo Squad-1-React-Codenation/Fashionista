@@ -21,8 +21,8 @@ const Home = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(getListing());
-  }, [dispatch]);
+    !products.length && dispatch(getListing());
+  }, [dispatch, products.length]);
 
   const loaders = () => {
     const loaders = [];
