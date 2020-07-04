@@ -51,9 +51,7 @@ export default class ProductAPI {
       `${this.baseURL}/catalog?search=${encodeURI(codeColor)}`
     );
     const productsResponse: ProductResponseType[] = await response.json();
-    const products = productsResponse
-      .map((product) => parseProduct(product))
-      .filter((product) => product.style.includes(codeColor));
+    const products = productsResponse.map((product) => parseProduct(product));
 
     return {
       product: products[0],
