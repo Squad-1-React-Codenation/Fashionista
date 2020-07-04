@@ -4,6 +4,7 @@ import { Button } from "../../base/buttons";
 import { ShoppingCartICon, SearchIcon } from "../../base/icons";
 import { SearchModal } from "../../modules/searchModal";
 import { BagModal } from "../../modules/bagModal";
+import { Countries } from "../../modules/countries";
 import { useSelector } from "react-redux";
 import { StoreState } from "../../../store";
 
@@ -16,6 +17,7 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <Logo height={40} width={120} />
+        <Countries />
         <div className="header__icons">
           <Button onClick={() => setModal({ search: true, open: true })}>
             <SearchIcon />
