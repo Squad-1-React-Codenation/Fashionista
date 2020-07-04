@@ -11,6 +11,7 @@ import {
   decreaseQuantity,
 } from "../../../store/cart/actions";
 import { ProductCartType } from "../../../store/cart/types";
+import centsToCash from "../../../lib/format/centsToCash";
 
 type PropsType = {
   isOpen: boolean;
@@ -19,19 +20,18 @@ type PropsType = {
 
 export const BagModal = ({ isOpen, close }: PropsType) => {
   const dispatch = useDispatch();
-  const { count, products } = useSelector((state: StoreState) => state.cart);
+  const { count, products, value } = useSelector(
+    (state: StoreState) => state.cart
+  );
 
-  const removeProduct = (product: ProductCartType) => {
+  const removeProduct = (product: ProductCartType) =>
     dispatch(removeFromCart(product));
-  };
 
-  const increaseProductQuantity = (product: ProductCartType) => {
+  const increaseProductQuantity = (product: ProductCartType) =>
     dispatch(increaseQuantity(product));
-  };
 
-  const decreaseProductQuantity = (product: ProductCartType) => {
+  const decreaseProductQuantity = (product: ProductCartType) =>
     dispatch(decreaseQuantity(product));
-  };
 
   const { t } = useTranslation();
 
@@ -41,7 +41,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
         {products.length ? (
           products.map((product: ProductCartType) => (
             <ModalCard
-              key={product.details.codeColor}
+              key={product.details.codeColor + product.size.size}
               product={product.details}
               quantity={product.quantity}
               size={product.size.size}
@@ -55,6 +55,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
           <div className="modal__empty-list">{t("nothingHere")}</div>
         )}
       </div>
+      <div>{centsToCash(value)}</div>
     </Modal>
   );
 };

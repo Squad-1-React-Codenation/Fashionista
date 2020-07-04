@@ -50,7 +50,7 @@ const Home = () => {
             <Card
               key={product.codeColor}
               product={product}
-              onClick={() => history.push(`/produto/${product.style}`)}
+              onClick={() => history.push(`/produto/${product.codeColor}`)}
             />
           </>
         ))}

@@ -47,13 +47,18 @@ export default class ProductAPI {
     product?: ProductType;
     additionalColors: ProductType[];
   }> {
+    const id = style.split("_")[0];
+
     const response = await fetch(
-      `${this.baseURL}/catalog?search=${encodeURI(style)}`
+      `${this.baseURL}/catalog?search=${encodeURI(id)}`
     );
     const productsResponse: ProductResponseType[] = await response.json();
     const products = productsResponse
       .map((product) => parseProduct(product))
-      .filter((product) => product.style.includes(style));
+      .filter((product) => product.style.includes(id));
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    products.sort((pa, _) => (pa.codeColor === style ? -1 : 1));
 
     return {
       product: products[0],
