@@ -2,7 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchPropsType = {
-  onSearchChange: () => void;
+  onSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
 };
 
 export const SearchInput = (props: SearchPropsType) => {
@@ -15,7 +16,8 @@ export const SearchInput = (props: SearchPropsType) => {
         className="modal__search-input"
         type="text"
         placeholder={t("searchProduct")}
-      ></input>
+        value={props.value}
+      />
     </div>
   );
 };

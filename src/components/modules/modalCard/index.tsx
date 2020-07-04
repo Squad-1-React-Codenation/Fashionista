@@ -5,17 +5,23 @@ import { Button, SquareSharpButton } from "../../base/buttons";
 import { MinusIcon, PlusIcon } from "../../base/icons";
 import centsToCash from "../../../lib/format/centsToCash";
 import { ProductCartType } from "../../../store/cart/types";
+import { ProductType } from "../../../services/products/types";
+import { useTranslation } from "react-i18next";
 
 type ModalCardPropsType = {
-  product: ProductCartType;
+  product: ProductType;
+  size?: string;
+  quantity?: number;
   isBag: boolean;
-  onProductClick: () => void;
-  onRemoveProduct: (product: ProductCartType) => void;
-  onIncreaseQuantity: (product: ProductCartType) => void;
-  onDecreaseQuantity: (product: ProductCartType) => void;
+  onProductClick?: () => void;
+  onRemoveProduct?: (product: ProductCartType) => void;
+  onIncreaseQuantity?: (product: ProductCartType) => void;
+  onDecreaseQuantity?: (product: ProductCartType) => void;
 };
 
 export const ModalCard = (props: ModalCardPropsType) => {
+  const { t } = useTranslation();
+
   return (
     <div className="modal__card">
       <div
@@ -28,28 +34,22 @@ export const ModalCard = (props: ModalCardPropsType) => {
       >
         <img
           className="modal__product-image"
-          src={props.product.details.image}
+          src={props.product.image}
           alt=""
         />
         <div className="modal__product-info">
-          <span className="modal__product-name">
-            {props.product.details.name}
-          </span>
+          <span className="modal__product-name">{props.product.name}</span>
           {props.isBag && (
             <>
               <span className="modal__product-size">
-                {`Tam.: ${props.product.size.size}`}
+                {`Tam.: ${props.size}`}
               </span>
               <div className="modal__quantity-controls">
-                <SquareSharpButton
-                  onClick={() => props.onDecreaseQuantity(props.product)}
-                >
+                <SquareSharpButton onClick={props.onDecreaseQuantity}>
                   <MinusIcon />
                 </SquareSharpButton>
-                <span>{props.product.quantity}</span>
-                <SquareSharpButton
-                  onClick={() => props.onIncreaseQuantity(props.product)}
-                >
+                <span>{props.quantity}</span>
+                <SquareSharpButton onClick={props.onIncreaseQuantity}>
                   <PlusIcon />
                 </SquareSharpButton>
               </div>
@@ -59,20 +59,20 @@ export const ModalCard = (props: ModalCardPropsType) => {
 
         <div className="modal__card-payment">
           <span className="modal__card-price">
-            {props.product.details.onSale
-              ? centsToCash(props.product.details.actualPrice)
-              : centsToCash(props.product.details.regularPrice)}
+            {props.product.onSale
+              ? centsToCash(props.product.actualPrice)
+              : centsToCash(props.product.regularPrice)}
           </span>
           <span className="modal__card-installments">
-            {props.product.details.installments.quantity}x{" "}
-            {centsToCash(props.product.details.installments.price)}
+            {props.product.installments.quantity}x{" "}
+            {centsToCash(props.product.installments.price)}
           </span>
         </div>
       </div>
       {props.isBag && (
         <div className="modal__card-remove">
-          <Button onClick={() => props.onRemoveProduct(props.product)}>
-            Remover item
+          <Button onClick={() => props.onRemoveProduct}>
+            {t("removeItem")}
           </Button>
         </div>
       )}

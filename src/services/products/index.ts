@@ -47,7 +47,9 @@ export default class ProductAPI {
     product?: ProductType;
     additionalColors: ProductType[];
   }> {
-    const response = await fetch(`${this.baseURL}/catalog?search=${style}`);
+    const response = await fetch(
+      `${this.baseURL}/catalog?search=${encodeURI(style)}`
+    );
     const productsResponse: ProductResponseType[] = await response.json();
     const products = productsResponse
       .map((product) => parseProduct(product))
@@ -60,7 +62,9 @@ export default class ProductAPI {
   }
 
   public async searchProduct(search: string): Promise<ProductType[]> {
-    const response = await fetch(`${this.baseURL}/catalog?search=${search}`);
+    const response = await fetch(
+      `${this.baseURL}/catalog?search=${encodeURI(search)}`
+    );
     const products: ProductResponseType[] = await response.json();
 
     return products.map((product) => parseProduct(product));

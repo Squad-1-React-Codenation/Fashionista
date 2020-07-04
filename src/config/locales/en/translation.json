@@ -27,5 +27,6 @@
   "pickSize": "Choose a size",
   "sizeEmpty": "Opps!, you didn`t selected a size",
   "nothingHere": "Opps! Nothing here :/",
-  "noItem": "Opps! No items were found :/"
+  "noItem": "Opps! No items were found :/",
+  "removeItem": "Remove item"
 }

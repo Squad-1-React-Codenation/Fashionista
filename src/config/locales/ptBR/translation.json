@@ -27,5 +27,6 @@
   "pickSize": "Escolha o tamanho",
   "sizeEmpty": "Ops! Você não escolheu um tamanho",
   "nothingHere": "Ops! Nada aqui :/",
-  "noItem": "Ops! Nenhum item foi encontrado :/"
+  "noItem": "Ops! Nenhum item foi encontrado :/",
+  "removeItem": "Remover item"
 }
