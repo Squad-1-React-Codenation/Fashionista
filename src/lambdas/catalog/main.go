@@ -7,20 +7,30 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+func handler(req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	products := GetProducts()
-	res, err := json.Marshal(products)
 
+	headers := map[string]string{
+		"content-type":                "application/json; charset=utf-8",
+		"access-control-allow-origin": "*"}
+
+	search := req.QueryStringParameters["search"]
+	if len(search) > 0 {
+		products = SearchProduct(products, search)
+	}
+
+	if len(products) == 0 {
+		return events.APIGatewayProxyResponse{
+			StatusCode: 404,
+		}, nil
+	}
+
+	res, err := json.Marshal(products)
 	if err != nil {
 		return events.APIGatewayProxyResponse{
 			StatusCode: 500,
 		}, nil
 	}
-
-	headers := map[string]string{
-		"content-type":                "application/json; charset=utf-8",
-		"cache-control":               "public, max-age=3600",
-		"access-control-allow-origin": "*"}
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,

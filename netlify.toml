@@ -11,6 +11,7 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+  query = { search = ":search" }
 
 [[redirects]]
   from = "/*"
