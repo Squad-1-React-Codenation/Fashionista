@@ -11,7 +11,7 @@ import {
   decreaseQuantity,
 } from "../../../store/cart/actions";
 import { ProductCartType } from "../../../store/cart/types";
-import centsToCash from "../../../lib/format/centsToCash";
+import { ModalFooter } from "../modalFooter";
 
 type PropsType = {
   isOpen: boolean;
@@ -55,7 +55,7 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
           <div className="modal__empty-list">{t("nothingHere")}</div>
         )}
       </div>
-      <div>{centsToCash(value)}</div>
+      <ModalFooter value={value}></ModalFooter>
     </Modal>
   );
 };

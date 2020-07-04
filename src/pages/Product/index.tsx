@@ -77,7 +77,7 @@ export const Product = () => {
             {centsToCash(product.actualPrice)}
           </span>
           <span className="productPrice productPrice__installments">
-            em até {product.installments.quantity}x R${" "}
+            {t("upTo")} {product.installments.quantity}x{" "}
             {centsToCash(product.installments.price)}
           </span>
         </div>

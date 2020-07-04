@@ -20,7 +20,7 @@
   "shipping": "Shipping",
   "returns": "Returns",
   "info": "Info",
-  "login": "Log In",
+  "login": "Account",
   "orders": "Orders",
   "loyalty": "Loyalty Program",
   "rights": " ©2009-2020 All rights Reserved",
@@ -28,5 +28,9 @@
   "sizeEmpty": "Opps!, you didn`t selected a size",
   "nothingHere": "Opps! Nothing here :/",
   "noItem": "Opps! No items were found :/",
-  "removeItem": "Remove item"
+  "removeItem": "Remove item",
+  "size": "Size:",
+  "subtotal": "Subtotal",
+  "upTo": "up to"
 }
+
