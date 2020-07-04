@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer__rights">
         <div className="footer__primary">
           <div className="footer--infos">
@@ -88,7 +88,7 @@ const Footer = () => {
           <div className="text-footer">{t("rights")}</div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
