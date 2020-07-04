@@ -14,8 +14,7 @@ func handler(req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse,
 		"content-type":                "application/json; charset=utf-8",
 		"access-control-allow-origin": "*"}
 
-	search := req.QueryStringParameters["search"]
-	if len(search) > 0 {
+	if search, ok := req.QueryStringParameters["search"]; ok {
 		products = SearchProduct(products, search)
 	}
 
