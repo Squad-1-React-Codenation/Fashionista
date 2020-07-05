@@ -59,15 +59,15 @@ describe("The productAPI", () => {
       server.use(
         rest.get(/\/catalog$/, (req, res, ctx) => {
           query = req.url.search;
-          return res(ctx.json(mockedProducts));
+          return res(ctx.json([mockedProducts[0]]));
         })
       );
-      const response = await productAPI.getProduct("20002570");
+      const response = await productAPI.getProduct(mockedProducts[0].style);
 
-      expect(query).toBe("?search=20002570");
+      expect(query).toBe("?search=" + mockedProducts[0].style);
 
       expect(response.product).toBeTruthy();
-      expect(response.additionalColors?.length).toBe(1);
+      expect(response.additionalColors?.length).toBe(0);
     });
   });
 
