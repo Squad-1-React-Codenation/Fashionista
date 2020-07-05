@@ -28,5 +28,9 @@
   "sizeEmpty": "Ops! Você não escolheu um tamanho",
   "nothingHere": "Ops! Nada aqui :/",
   "noItem": "Ops! Nenhum item foi encontrado :/",
-  "removeItem": "Remover item"
+  "removeItem": "Remover item",
+  "size": "Tam.:",
+  "subtotal": "Subtotal",
+  "upTo": "em até"
 }
+

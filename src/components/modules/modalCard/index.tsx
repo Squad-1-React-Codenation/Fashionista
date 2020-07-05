@@ -42,7 +42,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
           {props.isBag && (
             <>
               <span className="modal__product-size">
-                {`Tam.: ${props.size}`}
+                {`${t("size")} ${props.size}`}
               </span>
               <div className="modal__quantity-controls">
                 <SquareSharpButton onClick={props.onDecreaseQuantity}>
@@ -71,9 +71,7 @@ export const ModalCard = (props: ModalCardPropsType) => {
       </div>
       {props.isBag && (
         <div className="modal__card-remove">
-          <Button onClick={() => props.onRemoveProduct}>
-            {t("removeItem")}
-          </Button>
+          <Button onClick={props.onRemoveProduct}>{t("removeItem")}</Button>
         </div>
       )}
     </div>

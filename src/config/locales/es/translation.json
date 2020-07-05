@@ -11,8 +11,8 @@
   "searchProduct": "Buscar productos...",
   "notFoundPage": "La página que está buscando ha sido renombrada, eliminada o quizás nunca existió.",
   "notFoundButtonMessage": "Regresar a la página principal",
-  "about": "Sobre Nosotros",
-  "brand": "Quienes Somos",
+  "about": "Sobre",
+  "brand": "Marca",
   "press": "Prensa",
   "guidshop": "Guia de Tallas",
   "help": "Ayuda",
@@ -20,7 +20,7 @@
   "shipping": "Información de Envío",
   "returns": "Devolucíon",
   "info": "Info",
-  "login": "Iniciar Sesíon",
+  "login": "Mi cuenta",
   "orders": "Pedidos",
   "loyalty": "Programa Afiliados",
   "rights": " ©2009-2020 Todos los derechos reservados",
@@ -28,5 +28,12 @@
   "sizeEmpty": "Ops! No seleccionaste una talla",
   "nothingHere": "Ops! Nada aquí :/",
   "noItem": "Ops! No se encontraron elementos :/",
-  "removeItem": "Remover el artículo"
+  "removeItem": "Remover el artículo",
+  "size": "Talla:",
+  "subtotal": "Total parcial",
+  "upTo": "hasta"
 }
+
+
+
+
