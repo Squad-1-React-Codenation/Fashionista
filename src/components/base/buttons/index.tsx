@@ -20,12 +20,12 @@ export const Button = (props: ButtonPropsType) => {
 };
 
 export const SquareSharpButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--squareSharp" />;
+  return <Button data-testid="squareSharpButton" {...props} modifier="button--squareSharp" />;
 };
 
 export const SizeInfoButton = (props: ButtonPropsType) => {
   return (
-    <label className={`sizes sizes--${props.modifier}`}>
+    <label data-testid="sizeInfoButton" className={`sizes sizes--${props.modifier}`}>
       <input
         className="sizes--input"
         type="radio"
@@ -41,11 +41,7 @@ export const SizeInfoButton = (props: ButtonPropsType) => {
 };
 
 export const LargeButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--large" />;
+  return <Button data-testid="largeButton" {...props} modifier="button--large" />;
 };
 
-export const OutlineButton = (props: ButtonPropsType) => {
-  return <Button {...props} modifier="button--large button--outline" />;
-};
 
-export const ButtonIcon = () => <i></i>;
