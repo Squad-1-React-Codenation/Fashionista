@@ -35,30 +35,23 @@ export default class ProductAPI {
   }
 
   public async getCatalog(): Promise<ProductType[]> {
-    const response = await fetch(this.baseURL + "/catalog?p=1&l=22");
+    const response = await fetch(this.baseURL + "/catalog");
     const products: ProductResponseType[] = await response.json();
 
     return products.map((product) => parseProduct(product));
   }
 
   public async getProduct(
-    style: string
+    codeColor: string
   ): Promise<{
     product?: ProductType;
     additionalColors: ProductType[];
   }> {
-    const id = style.split("_")[0];
-
     const response = await fetch(
-      `${this.baseURL}/catalog?search=${encodeURI(id)}`
+      `${this.baseURL}/catalog?search=${encodeURI(codeColor)}`
     );
     const productsResponse: ProductResponseType[] = await response.json();
-    const products = productsResponse
-      .map((product) => parseProduct(product))
-      .filter((product) => product.style.includes(id));
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    products.sort((pa, _) => (pa.codeColor === style ? -1 : 1));
+    const products = productsResponse.map((product) => parseProduct(product));
 
     return {
       product: products[0],
