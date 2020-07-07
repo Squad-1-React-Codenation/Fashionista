@@ -17,8 +17,7 @@ describe("The component <Button />", () => {
     sizes: "M",
   };
   it("Should render Button component with children", async () => {
-    render(<Button children={mockButton.children}></Button>);
-
+    render(<Button>{mockButton.children}</Button>);
     expect(await screen.findByText("component")).toBeTruthy();
   });
 });
@@ -26,7 +25,6 @@ describe("The component <Button />", () => {
 describe("The component <SquareSharpButton />", () => {
   it("Should render SquareSharpButton component", async () => {
     render(<SquareSharpButton />);
-
     expect(await screen.findByTestId("squareSharpButton")).toBeTruthy();
   });
 });
@@ -34,7 +32,6 @@ describe("The component <SquareSharpButton />", () => {
 describe("The component <SizeInfoButton />", () => {
   it("Should render SizeInfoButton component", async () => {
     render(<SizeInfoButton />);
-
     expect(await screen.findByTestId("sizeInfoButton")).toBeTruthy();
   });
 });
@@ -42,7 +39,6 @@ describe("The component <SizeInfoButton />", () => {
 describe("The component <LargeButton />", () => {
   it("Should render LargeButton component", async () => {
     render(<LargeButton />);
-
     expect(await screen.findByTestId("largeButton")).toBeTruthy();
   });
 });
