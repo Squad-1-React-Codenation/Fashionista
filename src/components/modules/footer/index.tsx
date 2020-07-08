@@ -16,17 +16,17 @@ const Footer = () => {
             <h3>{t("about")}</h3>
             <ul className="item--footer">
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/marca" className="item__footer-link">
                   {t("brand")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/imprensa" className="item__footer-link">
                   {t("press")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/guild-shop" className="item__footer-link">
                   {t("guidshop")}
                 </Link>
               </li>
@@ -36,17 +36,17 @@ const Footer = () => {
             <h3>{t("help")}</h3>
             <ul className="item--footer">
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/atendimento" className="item__footer-link">
                   {t("contactsus")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/frete" className="item__footer-link">
                   {t("shipping")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/devolução" className="item__footer-link">
                   {t("returns")}
                 </Link>
               </li>
@@ -56,17 +56,17 @@ const Footer = () => {
             <h3>{t("info")}</h3>
             <div className="item--footer">
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/conta" className="item__footer-link">
                   {t("login")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/pedidos" className="item__footer-link">
                   {t("orders")}
                 </Link>
               </li>
               <li>
-                <Link to="/" className="item__footer-link">
+                <Link to="/créditos" className="item__footer-link">
                   {t("loyalty")}
                 </Link>
               </li>
