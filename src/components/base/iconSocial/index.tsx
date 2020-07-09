@@ -8,7 +8,6 @@ type SocialIconsType = {
 export const Instagram = ({ height, width }: SocialIconsType) => {
   return (
     <a
-      data-testid="instagram"
       href="https://www.instagram.com/app_undefined/?hl=pt-br"
       target="_blank"
       rel="noopener noreferrer"
@@ -21,7 +20,6 @@ export const Instagram = ({ height, width }: SocialIconsType) => {
 export const Facebook = ({ height, width }: SocialIconsType) => {
   return (
     <a
-      data-testid="facebook"
       href="https://www.facebook.com/"
       target="_blank"
       rel="noopener noreferrer"
@@ -38,12 +36,7 @@ export const Facebook = ({ height, width }: SocialIconsType) => {
 
 export const Twitter = ({ height, width }: SocialIconsType) => {
   return (
-    <a
-      data-testid="twitter" 
-      href="https://twitter.com/" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
+    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
       <img
         src="/img/black-twitter.png"
         alt="Twitter"
