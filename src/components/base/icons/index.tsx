@@ -1,8 +1,9 @@
 import React from "react";
 
-export const ShoppingCartICon = () => {
+export const ShoppingCartIcon = () => {
   return (
     <svg
+      data-testid="shoppingCartIcon"
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -37,6 +38,7 @@ export const ShoppingCartICon = () => {
 export const SearchIcon = () => {
   return (
     <svg
+      data-testid="searchIcon"
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -64,6 +66,7 @@ export const SearchIcon = () => {
 export const BackArrowIcon = () => {
   return (
     <svg
+      data-testid="backArrowIcon"
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -91,6 +94,7 @@ export const BackArrowIcon = () => {
 export const MinusIcon = () => {
   return (
     <svg
+      data-testid="minusIcon"
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -111,6 +115,7 @@ export const MinusIcon = () => {
 export const PlusIcon = () => {
   return (
     <svg
+      data-testid="plusIcon"
       width="20"
       height="20"
       viewBox="0 0 20 20"

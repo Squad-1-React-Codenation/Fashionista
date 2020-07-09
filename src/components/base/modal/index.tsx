@@ -20,6 +20,7 @@ export const Modal = ({ title, children, isOpen, close }: PropsType) => {
   return ReactDOM.createPortal(
     <>
       <div
+        data-testid="modal"
         onClick={close}
         className={`modal__overlay ${isOpen ? "modal__overlay--is-on" : ""}`}
       ></div>
@@ -33,7 +34,6 @@ export const Modal = ({ title, children, isOpen, close }: PropsType) => {
         {children}
       </div>
     </>,
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     document.getElementById("modal-root")!
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Logo } from "../../base/logo";
 import { Button } from "../../base/buttons";
-import { ShoppingCartICon, SearchIcon } from "../../base/icons";
+import { ShoppingCartIcon, SearchIcon } from "../../base/icons";
 import { SearchModal } from "../../modules/searchModal";
 import { BagModal } from "../../modules/bagModal";
 import { Countries } from "../../modules/countries";
@@ -23,7 +23,7 @@ const Header = () => {
             <SearchIcon />
           </Button>
           <Button onClick={() => setModal({ search: false, open: true })}>
-            <ShoppingCartICon />
+            <ShoppingCartIcon />
             {count ? <span className="header__cart--qtde">{count}</span> : null}
           </Button>
         </div>
