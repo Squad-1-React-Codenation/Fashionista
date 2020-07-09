@@ -17,7 +17,7 @@ describe("The component <Button />", () => {
     sizes: "M",
   };
   it("Should render Button component with children", async () => {
-    render(<Button>{mockButton.children}</Button>);
+    render(<Button {...mockButton}>Click Me</Button>);
     expect(await screen.findByText("component")).toBeTruthy();
   });
 });
