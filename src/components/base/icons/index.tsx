@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ShoppingCartICon = () => {
+export const ShoppingCartIcon = () => {
   return (
     <svg
       width="20"
@@ -9,6 +9,7 @@ export const ShoppingCartICon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Carrinho</title>
       <path
         d="M5 1.66666L2.5 4.99999V16.6667C2.5 17.1087 2.67559 17.5326 2.98816 17.8452C3.30072 18.1577 3.72464 18.3333 4.16667 18.3333H15.8333C16.2754 18.3333 16.6993 18.1577 17.0118 17.8452C17.3244 17.5326 17.5 17.1087 17.5 16.6667V4.99999L15 1.66666H5Z"
         stroke="#222222"
@@ -43,6 +44,7 @@ export const SearchIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Pesquisar</title>
       <path
         d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
         stroke="#222222"
@@ -70,6 +72,7 @@ export const BackArrowIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Voltar</title>
       <path
         d="M15.8333 10H4.16666"
         stroke="#222222"
@@ -97,6 +100,7 @@ export const MinusIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Diminuir</title>
       <path
         d="M4.16666 10H15.8333"
         stroke="#222222"
@@ -117,6 +121,7 @@ export const PlusIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Aumentar</title>
       <path
         d="M10 4.16669V15.8334"
         stroke="black"
