@@ -14,7 +14,7 @@ import store from "./store";
 const App = () => (
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter forceRefresh={true}>
         <Header />
         <div className="container">
           <Routes />
