@@ -37,7 +37,7 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         onSearchChange={({ target: { value } }) => setSearchValue(value)}
       />
       <div className="modal__search-list">
-        {products.length ? (
+        {products.length && searchValue.length ? (
           products.map((product) => {
             return (
               <ModalCard

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Instagram } from "../../base/iconsocial";
-import { Facebook } from "../../base/iconsocial";
-import { Twiter } from "../../base/iconsocial";
+import { Instagram } from "../../base/iconSocial";
+import { Facebook } from "../../base/iconSocial";
+import { Twitter } from "../../base/iconSocial";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
@@ -81,7 +81,7 @@ const Footer = () => {
             <Facebook height={24} width={24} />
           </div>
           <div>
-            <Twiter height={24} width={24} />
+            <Twitter height={24} width={24} />
           </div>
         </div>
         <div className="center-this">

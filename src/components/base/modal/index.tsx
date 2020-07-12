@@ -20,9 +20,10 @@ export const Modal = ({ title, children, isOpen, close }: PropsType) => {
   return ReactDOM.createPortal(
     <>
       <div
+        data-testid="modal"
         onClick={close}
         className={`modal__overlay ${isOpen ? "modal__overlay--is-on" : ""}`}
-      ></div>
+      />
       <div className={`modal ${isOpen ? "modal--is-on" : ""}`}>
         <div className="modal__header">
           <button className="button button--outline" onClick={close}>

@@ -34,7 +34,7 @@ export const Facebook = ({ height, width }: SocialIconsType) => {
   );
 };
 
-export const Twiter = ({ height, width }: SocialIconsType) => {
+export const Twitter = ({ height, width }: SocialIconsType) => {
   return (
     <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
       <img
