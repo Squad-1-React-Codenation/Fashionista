@@ -24,7 +24,6 @@ describe("The component IconSocial", () => {
 });
 
 describe("The component IconSocial will redirect", () => {
-  
   it("Should redirect when clicking on Instagram anchor", () => {
     render(<Instagram {...mockedProps} />);
     expect(document.querySelector("a")?.getAttribute("href")).toBe(
