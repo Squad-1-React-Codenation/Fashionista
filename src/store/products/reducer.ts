@@ -1,6 +1,6 @@
 import { ProductStateType, ProductActionsTypes, ProductAction } from "./types";
 
-const initialState: ProductStateType = {
+export const initialState: ProductStateType = {
   listing: {
     loading: false,
     error: null,
@@ -19,7 +19,7 @@ const initialState: ProductStateType = {
   },
 };
 
-const productReducer = (
+export const productReducer = (
   state = initialState,
   action: ProductActionsTypes
 ): ProductStateType => {

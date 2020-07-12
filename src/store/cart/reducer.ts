@@ -5,7 +5,7 @@ import {
   ProductCartType,
 } from "./types";
 
-const initialState: CartStateType = {
+export const initialState: CartStateType = {
   count: 0,
   value: 0,
   products: [],
@@ -21,7 +21,7 @@ const findProduct = (
       product.size.size === searchedProduct.size.size
   );
 
-const cartReducer = (
+export const cartReducer = (
   state = initialState,
   action: CartActionTypes
 ): CartStateType => {
