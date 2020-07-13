@@ -8,6 +8,7 @@ import { getSearchProduct } from "../../../store/products/actions";
 import { Modal } from "../../base/modal";
 import { SearchInput } from "../../modules/searchInput";
 import { ModalCard } from "../../modules/modalCard";
+import { Link } from "react-router-dom";
 
 type PropsType = {
   isOpen: boolean;
@@ -40,12 +41,18 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         {products.length && searchValue.length ? (
           products.map((product) => {
             return (
-              <ModalCard
+              <Link
                 key={product.codeColor}
-                product={product}
-                onProductClick={() => false}
-                isBag={false}
-              />
+                to={`/produto/${product.codeColor}`}
+                className="modal__card-link"
+              >
+                <ModalCard
+                  key={product.codeColor}
+                  product={product}
+                  onProductClick={() => false}
+                  isBag={false}
+                />
+              </Link>
             );
           })
         ) : (
