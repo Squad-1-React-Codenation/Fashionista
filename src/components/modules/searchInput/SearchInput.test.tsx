@@ -1,5 +1,6 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import { SearchInput } from "../searchInput";
 
@@ -10,20 +11,20 @@ describe("The component Search Input", () => {
   };
 
   it("Should render Search component", () => {
-    const { getByTitle } = render(<SearchInput {...mockedProps} />);
-    const node = getByTitle("Pesquisar produto");
-    expect(node.value).toBe("");
+    render(<SearchInput {...mockedProps} />);
+    expect(screen.getByTitle("Pesquisar produto")).toHaveValue("");
   });
 
   describe("When input changes", () => {
     it("Shoud change the value", () => {
       const onSearchChangeMock = jest.fn();
-      const { getByTitle } = render(
-        <SearchInput onSearchChange={onSearchChangeMock} value={"Vestido"} />
+      render(
+        <SearchInput onSearchChange={onSearchChangeMock} value="Vestido" />
       );
-      const node = getByTitle("Pesquisar produto");
-      fireEvent.change(node);
-      expect(node.value).toBe("Vestido");
+      fireEvent.change(screen.getByTitle("Pesquisar produto"), {
+        target: { value: "Vestido" },
+      });
+      expect(screen.getByTitle("Pesquisar produto")).toHaveValue("Vestido");
     });
   });
 });
