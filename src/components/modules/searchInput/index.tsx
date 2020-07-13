@@ -12,9 +12,10 @@ export const SearchInput = (props: SearchPropsType) => {
   return (
     <div className="modal__search">
       <input
+        title="Pesquisar produto"
         onChange={props.onSearchChange}
         className="modal__search-input"
-        type="text"
+        type="search"
         placeholder={t("searchProduct")}
         value={props.value}
       />
