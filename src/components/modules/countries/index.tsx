@@ -18,17 +18,17 @@ export const Countries = () => {
   return (
     <div className="countries">
       <div className={`countries__flag ${isCurrent("pt-BR")}`}>
-        <Button data-testid="brazil" onClick={() => changeLanguage("pt-BR")}>
+        <Button onClick={() => changeLanguage("pt-BR")}>
           <img src="/img/brazil.png" alt="Brasil" height={16} />
         </Button>
       </div>
       <div className={`countries__flag ${isCurrent("es")}`}>
-        <Button data-testid="spanish" onClick={() => changeLanguage("es")}>
+        <Button onClick={() => changeLanguage("es")}>
           <img src="/img/mexico.png" alt="Mexico" height={16} />
         </Button>
       </div>
       <div className={`countries__flag ${isCurrent("en")}`}>
-        <Button data-testid="english" onClick={() => changeLanguage("en")}>
+        <Button onClick={() => changeLanguage("en")}>
           <img src="/img/usa.png" alt="Unites States of America" height={16} />
         </Button>
       </div>
