@@ -17,7 +17,6 @@ export const SearchInput = (props: SearchPropsType) => {
         className="modal__search-input"
         type="search"
         placeholder={t("searchProduct")}
-        title="Pesquisar produto"
         aria-label="Pesquisar produto"
         value={props.value}
       />
