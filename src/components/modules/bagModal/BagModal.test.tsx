@@ -89,7 +89,7 @@ describe("The component BagModal", () => {
 
     const { getByText } = renderComponent();
 
-    fireEvent.click(getByText(i18n.t("removeItem")));
+    fireEvent.click(getByText(("removeItem")));
 
     expect(Actions.removeFromCart).toHaveBeenCalledTimes(1);
     expect(Actions.removeFromCart).toHaveBeenCalledWith(
