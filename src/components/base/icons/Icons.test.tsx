@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 import {
   ShoppingCartIcon,
@@ -18,21 +17,21 @@ describe("The component Icon", () => {
 
   it("Should render SearchIcon component", async () => {
     render(<SearchIcon />);
-    expect(screen.getByTitle("Pesquisar")).toBeTruthy();
+    expect(screen.getByTitle("Pesquisar")).toBeInTheDocument();
   });
 
   it("Should render BackArrowIcon component", async () => {
     render(<BackArrowIcon />);
-    expect(screen.getByTitle("Voltar")).toBeTruthy();
+    expect(screen.getByTitle("Voltar")).toBeInTheDocument();
   });
 
   it("Should render MinusIcon component", async () => {
     render(<MinusIcon />);
-    expect(screen.getByTitle("Diminuir")).toBeTruthy();
+    expect(screen.getByTitle("Diminuir")).toBeInTheDocument();
   });
 
   it("Should render PlusIcon component", async () => {
     render(<PlusIcon />);
-    expect(screen.getByTitle("Aumentar")).toBeTruthy();
+    expect(screen.getByTitle("Aumentar")).toBeInTheDocument();
   });
 });

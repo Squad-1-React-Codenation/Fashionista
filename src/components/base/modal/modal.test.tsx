@@ -22,7 +22,7 @@ describe("The component Modal", () => {
 
     const { getByText } = render(<Modal {...mockedProps} title={title} />);
 
-    expect(getByText(title)).toBeTruthy();
+    expect(getByText(title)).toBeInTheDocument();
   });
 
   describe("When the button is clicked", () => {
