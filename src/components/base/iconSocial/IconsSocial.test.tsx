@@ -26,22 +26,18 @@ describe("The component IconSocial", () => {
 describe("The component IconSocial will redirect", () => {
   it("Should redirect when clicking on Instagram anchor", () => {
     render(<Instagram {...mockedProps} />);
-    expect(document.querySelector("a")?.getAttribute("href")).toBe(
-      "https://www.instagram.com/app_undefined/?hl=pt-br"
-    );
+    expect(screen.getByRole("link", {name: "Instagram"}));   
   });
 
   it("Should redirect when clicking on Facebook anchor", () => {
     render(<Facebook {...mockedProps} />);
-    expect(document.querySelector("a")?.getAttribute("href")).toBe(
-      "https://www.facebook.com/"
-    );
+    expect(screen.getByRole("link", {name: "Facebook"}));
+    
   });
 
   it("Should redirect when clicking on Twitter anchor", () => {
     render(<Twitter {...mockedProps} />);
-    expect(document.querySelector("a")?.getAttribute("href")).toBe(
-      "https://twitter.com/"
-    );
+    expect(screen.getByRole("link", {name: "Twitter"}));
+    
   });
 });

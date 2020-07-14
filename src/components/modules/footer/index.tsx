@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="footer">
+    <footer className="footer" data-testid="Footer">
       <div className="footer__rights">
         <div className="footer__primary">
           <div className="footer--infos">
