@@ -5,7 +5,7 @@ import {
   ProductCartType,
 } from "./types";
 
-export const initialState: CartStateType = {
+const initialState: CartStateType = {
   count: 0,
   value: 0,
   products: [],
