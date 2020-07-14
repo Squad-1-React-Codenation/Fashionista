@@ -7,7 +7,11 @@ import Footer from "./index";
 
 describe("The component Footer", () => {
   it("Should render Footer component", () => {
-    render(<BrowserRouter><Footer /></BrowserRouter>);
+    render(
+      <BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    );
     expect(screen.getByTestId("Footer")).toBeInTheDocument();
   });
 });
