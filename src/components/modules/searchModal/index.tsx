@@ -14,6 +14,9 @@ type PropsType = {
   close: () => void;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let searchTimer: any;
+
 export const SearchModal = ({ isOpen, close }: PropsType) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -25,9 +28,13 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    if (searchValue.length > 3) {
-      dispatch(getSearchProduct(searchValue));
+    clearTimeout(searchTimer);
+    if (searchValue) {
+      searchTimer = setTimeout(() => {
+        dispatch(getSearchProduct(searchValue));
+      }, 1000);
     }
+    return () => clearTimeout(searchTimer);
   }, [searchValue, dispatch]);
 
   return (
@@ -37,13 +44,12 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         onSearchChange={({ target: { value } }) => setSearchValue(value)}
       />
       <div className="modal__search-list">
-        {products.length && searchValue.length ? (
+        {products.length ? (
           products.map((product) => {
             return (
               <ModalCard
                 key={product.codeColor}
                 product={product}
-                onProductClick={() => false}
                 isBag={false}
               />
             );
