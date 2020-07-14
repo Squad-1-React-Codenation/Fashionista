@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { ProductResponseType } from "../types";
+import {
+  ProductResponseType,
+  ProductSizeResponseType,
+  ProductType,
+} from "../types";
 
 export const mockedProducts: ProductResponseType[] = [
   {
@@ -107,3 +111,34 @@ export const mockedProducts: ProductResponseType[] = [
     ],
   },
 ];
+
+export const mockedProduct: ProductType = {
+  name: "MOCKED VESTIDO TRANSPASSE BOW",
+  style: "20002605",
+  codeColor: "20002605_613",
+  colorSlug: "tapecaria",
+  color: "TAPEÇARIA",
+  onSale: false,
+  regularPrice: 199.9,
+  actualPrice: 199.9,
+  discountPercentage: 0,
+  installments: {
+    quantity: 3,
+    price: 66.64,
+  },
+  image:
+    "https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg",
+  sizes: [
+    { available: false, size: "PP", sku: "5807_343_0_PP" },
+    { available: true, size: "P", sku: "5807_343_0_P" },
+    { available: true, size: "M", sku: "5807_343_0_M" },
+    { available: true, size: "G", sku: "5807_343_0_G" },
+    { available: false, size: "GG", sku: "5807_343_0_GG" },
+  ],
+};
+
+export const mockedProductSize: ProductSizeResponseType = {
+  available: true,
+  size: "M",
+  sku: "5807_343_0_M",
+};

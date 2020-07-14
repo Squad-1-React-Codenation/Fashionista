@@ -37,24 +37,28 @@ export const BagModal = ({ isOpen, close }: PropsType) => {
 
   return (
     <Modal title={t("bagTitle", { count })} isOpen={isOpen} close={close}>
-      <div className="modal__search-list">
+      <>
         {products.length ? (
-          products.map((product: ProductCartType) => (
-            <ModalCard
-              key={product.details.codeColor + product.size.size}
-              product={product.details}
-              quantity={product.quantity}
-              size={product.size.size}
-              onRemoveProduct={() => removeProduct(product)}
-              onIncreaseQuantity={() => increaseProductQuantity(product)}
-              onDecreaseQuantity={() => decreaseProductQuantity(product)}
-              isBag
-            />
-          ))
+          <div data-testid="bagList" className="modal__search-list">
+            {products.map((product: ProductCartType) => (
+              <ModalCard
+                key={product.details.codeColor + product.size.size}
+                product={product.details}
+                quantity={product.quantity}
+                size={product.size.size}
+                onRemoveProduct={() => removeProduct(product)}
+                onIncreaseQuantity={() => increaseProductQuantity(product)}
+                onDecreaseQuantity={() => decreaseProductQuantity(product)}
+                isBag
+              />
+            ))}
+          </div>
         ) : (
-          <div className="modal__empty-list">{t("nothingHere")}</div>
+          <div data-testid="bagEmptyList" className="modal__empty-list">
+            {t("nothingHere")}
+          </div>
         )}
-      </div>
+      </>
       <ModalFooter value={value}></ModalFooter>
     </Modal>
   );

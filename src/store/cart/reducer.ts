@@ -21,7 +21,7 @@ const findProduct = (
       product.size.size === searchedProduct.size.size
   );
 
-const cartReducer = (
+export const cartReducer = (
   state = initialState,
   action: CartActionTypes
 ): CartStateType => {
