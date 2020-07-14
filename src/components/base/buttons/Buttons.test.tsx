@@ -13,27 +13,27 @@ describe("The component <Button />", () => {
   };
   it("Should render Button component with children", () => {
     render(<Button {...mockButton}>Click Me</Button>);
-    expect(screen.findByText("component")).toBeTruthy();
+    expect(screen.getByRole("button")).toBeInTheDocument();
   });
 });
 
 describe("The component <SquareSharpButton />", () => {
   it("Should render SquareSharpButton component", () => {
     render(<SquareSharpButton />);
-    expect(screen.getByTestId("squareSharpButton")).toBeTruthy();
+    expect(screen.getByTestId("squareSharpButton")).toBeInTheDocument();
   });
 });
 
 describe("The component <SizeInfoButton />", () => {
   it("Should render SizeInfoButton component", () => {
     render(<SizeInfoButton />);
-    expect(screen.getByTestId("sizeInfoButton")).toBeTruthy();
+    expect(screen.getByTestId("sizeInfoButton")).toBeInTheDocument();
   });
 });
 
 describe("The component <LargeButton />", () => {
   it("Should render LargeButton component", () => {
     render(<LargeButton />);
-    expect(screen.getByTestId("largeButton")).toBeTruthy();
+    expect(screen.getByTestId("largeButton")).toBeInTheDocument();
   });
 });
