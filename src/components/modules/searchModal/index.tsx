@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { StoreState } from "../../../store";
@@ -47,11 +48,18 @@ export const SearchModal = ({ isOpen, close }: PropsType) => {
         {products.length ? (
           products.map((product) => {
             return (
-              <ModalCard
+              <Link
                 key={product.codeColor}
-                product={product}
-                isBag={false}
-              />
+                to={`/produto/${product.codeColor}`}
+                className="modal__card-link"
+              >
+                <ModalCard
+                  key={product.codeColor}
+                  product={product}
+                  onProductClick={() => false}
+                  isBag={false}
+                />
+              </Link>
             );
           })
         ) : (
