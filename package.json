@@ -55,6 +55,22 @@
     "stylelint-prettier": "^1.1.2",
     "typescript": "^3.9.2"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/",
+      "!src/serviceWorker.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 30,
+        "functions": 42,
+        "lines": 44,
+        "statements": 43
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
