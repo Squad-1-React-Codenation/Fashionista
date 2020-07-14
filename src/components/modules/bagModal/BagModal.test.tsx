@@ -5,7 +5,6 @@ import { render, fireEvent } from "@testing-library/react";
 import { BagModal } from "../bagModal";
 import { initialState as products } from "../../../store/products/reducer";
 import * as Actions from "../../../store/cart/actions";
-import i18n from "../../../i18n";
 
 import {
   mockedProduct,
@@ -89,7 +88,7 @@ describe("The component BagModal", () => {
 
     const { getByText } = renderComponent();
 
-    fireEvent.click(getByText(i18n.t("removeItem")));
+    fireEvent.click(getByText("removeItem"));
 
     expect(Actions.removeFromCart).toHaveBeenCalledTimes(1);
     expect(Actions.removeFromCart).toHaveBeenCalledWith(
